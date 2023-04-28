@@ -21,7 +21,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Yuxiang Huang\n (黄宇翔)"
+  name             : "Yuxiang Huang"
   avatar           : "images/me.jpeg"
   bio              : "An undergraduate student of Tsinghua University"
   location         : "Beijing, China"

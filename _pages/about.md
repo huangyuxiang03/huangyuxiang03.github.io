@@ -22,16 +22,13 @@ efficient computing, recently working on efficient large language models and par
 
 # Publications and Preprints
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">CVPR 2016</div><img src='images/500x300.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
 Qin, Y., Hu, S., Lin, Y., Chen, W., Ding, N., Cui, G., ... & Sun, M. (2023). Tool Learning with Foundation Models. arXiv preprint arXiv:2304.08354.
 (https://arxiv.org/pdf/2304.08354.pdf)
 
 Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). Time series data encoding for efficient storage: a comparative analysis in Apache IoTDB. Proceedings of the VLDB Endowment, 15(10), 2148-2160.(https://www.vldb.org/pvldb/vol15/p2148-song.pdf)
 
 # Research Experiences
-- *2022.07-now*: Working at THUNLP, dept. of CST. Topiced *efficient big model*.
+- *2022.07-now*: Working in THUNLP, dept. of CST. Topiced *efficient big model*.
 - *2021.10-2022.07*, SRT (Student Research Training): Worked at School of Software, topiced *compression algorithms in big data database*, advised by Prof. Shaoxu Song.
 
 # Honors and Awards
