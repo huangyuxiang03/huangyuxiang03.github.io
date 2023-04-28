@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Yuxiang Huang | 黄宇翔"
-description              : "Sein heißt Werden, Leben heißt Lernen"
+description              : "„Sein heißt Werden, Leben heißt Lernen“"
 repository               : "huangyuxiang03/huangyuxiang03.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -21,8 +21,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Yuxiang Huang (黄宇翔)"
-  avatar           : 
+  name             : "Yuxiang Huang\n (黄宇翔)"
+  avatar           : "images/me.jpeg"
   bio              : "An undergraduate student of Tsinghua University"
   location         : "Beijing, China"
   employer         :
