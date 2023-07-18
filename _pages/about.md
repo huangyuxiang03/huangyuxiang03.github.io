@@ -24,7 +24,7 @@ efficient computing, recently working on efficient large language models and par
 
 # Publications and Preprints 
 
-Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., & Sun, M. (2023). [CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models](https://arxiv.org/pdf/2307.07705.pdf) arXiv preprint arXiv:2307.07705.
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., & Sun, M. (2023). [CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models.](https://arxiv.org/pdf/2307.07705.pdf) arXiv preprint arXiv:2307.07705.
 
 Qin, Y., Hu, S., Lin, Y., Chen, W., Ding, N., Cui, G., ... & Sun, M. (2023). [Tool Learning with Foundation Models.](https://arxiv.org/pdf/2304.08354.pdf) arXiv preprint arXiv:2304.08354.
 
