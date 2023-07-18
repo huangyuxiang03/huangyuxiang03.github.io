@@ -20,12 +20,18 @@ redirect_from:
 I am a 2nd year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC. My research interest is 
 efficient computing, recently working on efficient large language models and parameter efficient tuning. 
 
-# Publications and Preprints
+- News: Welcom to read our new paper *CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models* ! It is mainly about combiniting PET methods with model compression and we developed a method to recover its performance drop.
+
+# Publications and Preprints 
+
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., & Sun, M. (2023). [CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models](https://arxiv.org/pdf/2307.07705.pdf) arXiv preprint arXiv:2307.07705.
 
 Qin, Y., Hu, S., Lin, Y., Chen, W., Ding, N., Cui, G., ... & Sun, M. (2023). [Tool Learning with Foundation Models.](https://arxiv.org/pdf/2304.08354.pdf) arXiv preprint arXiv:2304.08354.
 
 
 Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time series data encoding for efficient storage: a comparative analysis in Apache IoTDB.](https://www.vldb.org/pvldb/vol15/p2148-song.pdf) Proceedings of the VLDB Endowment, 15(10), 2148-2160.
+
+(Note: $^*$ indicates equal contribution.)
 
 # Research Experiences
 - *2022.07-now*: Working in THUNLP, dept. of CST. Topiced *efficient big model*.
