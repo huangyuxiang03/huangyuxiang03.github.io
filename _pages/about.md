@@ -20,7 +20,7 @@ redirect_from:
 I am a 2nd year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC. My research interest is 
 efficient computing, recently working on efficient large language models and parameter efficient tuning. 
 
-- News: Welcom to read our new paper *CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models* ! It is mainly about combiniting PET methods with model compression and we developed a method to recover its performance drop.
+- News: Welcome to read our new paper *CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models* ! It is mainly about combiniting PET methods with model compression and we developed a method to recover its performance drop.
 
 # Publications and Preprints 
 
