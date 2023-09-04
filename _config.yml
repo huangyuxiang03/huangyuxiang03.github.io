@@ -23,7 +23,9 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Yuxiang Huang"
   avatar           : "images/me.jpeg"
-  bio              : "Preferred name: Shawn Yuxiang Huang \nLegal name: Yuxiang Huang\nAn undergraduate student of Tsinghua University"
+  bio              : "Preferred name: Shawn Yuxiang Huang"
+  bio2             : "Legal name: Yuxiang Huang"
+  bio3             : "An undergraduate student of Tsinghua University"
   location         : "Beijing, China"
   employer         :
   pubmed           : 
