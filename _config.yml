@@ -6,7 +6,7 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Shawn Yuxiang Huang | 黄宇翔"
+title                    : "Yuxiang Huang | 黄宇翔"
 description              : "„Sein heißt Werden, Leben heißt Lernen“"
 repository               : "huangyuxiang03/huangyuxiang03.github.io"
 google_scholar_stats_use_cdn : true
@@ -23,9 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Yuxiang Huang"
   avatar           : "images/me.jpeg"
-  bio              : "Preferred name: Shawn Yuxiang Huang"
-  bio2             : "Legal name: Yuxiang Huang"
-  bio3             : "An undergraduate student of Tsinghua University"
+  bio              : "An undergraduate student of Tsinghua University"
   location         : "Beijing, China"
   employer         :
   pubmed           : 
