@@ -17,10 +17,12 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a 2nd year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC. My research interest is 
+I am a 3rd year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC. My research interest is 
 efficient computing, recently working on efficient large language models and parameter efficient tuning. 
 
 - News: Welcome to read our new paper *CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models* ! It is mainly about combiniting PET methods with model compression and we developed a method to recover its performance drop.
+
+- News: Recently working on retrieval-based LLMs. Really new to this area, learning step by step :)
 
 # Publications and Preprints 
 
@@ -38,7 +40,7 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 - *2021.10-2022.07*, SRT (Student Research Training): Worked at School of Software, topiced *compression algorithms in big data database*, advised by Prof. Shaoxu Song.
 
 # Honors and Awards
-- Comprehensive Scholarship (Scholarship from Proj. Zesheng Tang) of Dept. of CST, 2021.09-2022.07 
+- Comprehensive Scholarship (Scholarship from Prof. Zesheng Tang) of Dept. of CST, 2021.09-2022.07 
 - The third prize, the 40th Tsinghua Challenge Cup
 
 # Educations
