@@ -25,7 +25,7 @@ I am a 3rd year undergraduate student of Dept. of Computer Science and Technolog
 
 # Publications and Preprints 
 
-Zhao, W.$^*$, **Huang, Y.**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting](https://arxiv.org/pdf/2402.13720.pdf) arXiv preprint arXiv:2402.13720
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting](https://arxiv.org/pdf/2402.13720.pdf) arXiv preprint arXiv:2402.13720
 
 Hu, S., Tu, Y., Han, X., Cui, G., He, C., Zhao, W., ... & Sun, M. (2024). [MiniCPM: Unveiling the Potential of End-side Large Language Models.](https://shengdinghu.notion.site/MiniCPM-Unveiling-the-Potential-of-End-side-Large-Language-Models-d4d3a8c426424654a4e80e42a711cb20) OpenBMB Blog.
 
