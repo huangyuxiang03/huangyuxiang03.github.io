@@ -17,14 +17,17 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a 3rd year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC. My research interest is 
-efficient computing, recently working on efficient large language models and parameter efficient tuning. 
+I am a 3rd year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.91/4 overall GPA. My research interest is efficient AI and machine learning systems, recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in THUNLP with Weilin Zhao (PhD. Student), Xu Han (Postdoc) and Zhiyuan Liu (Professor).
 
-- News: Welcome to read our new paper *CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models* ! It is mainly about combiniting PET methods with model compression and we developed a method to recover its performance drop.
+- News: Recently I have been working on efficient decoding algorithms. We have released  ``Ouroboros'', a new Speculative Decoding algorithm with Large Model Enhanced Drafting. Please refer to [Paper](https://arxiv.org/pdf/2402.13720.pdf) and [Code](https://github.com/thunlp/Ouroboros). It achieves speedups of up to $1.9\times$ and $2.8\times$ compared to lookahead decoding and speculative decoding, without any training.
 
-- News: Recently working on retrieval-based LLMs. Really new to this area, learning step by step :)
+- News: I am involved in the [MiniCPM](https://github.com/OpenBMB/MiniCPM) project of ModelBest Inc., OpenBMB and THUNLP. It is an end-side LLM outperforms Llama2-13B. I am responsible to model inference. 
 
 # Publications and Preprints 
+
+Zhao, W.$^*$, **Huang, Y.**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting](https://arxiv.org/pdf/2402.13720.pdf) arXiv preprint arXiv:2402.13720
+
+Hu, S., Tu, Y., Han, X., Cui, G., He, C., Zhao, W., ... & Sun, M. (2024). [MiniCPM: Unveiling the Potential of End-side Large Language Models.](https://shengdinghu.notion.site/MiniCPM-Unveiling-the-Potential-of-End-side-Large-Language-Models-d4d3a8c426424654a4e80e42a711cb20) OpenBMB Blog.
 
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., & Sun, M. (2023). [CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models.](https://arxiv.org/pdf/2307.07705.pdf) arXiv preprint arXiv:2307.07705.
 
@@ -40,6 +43,7 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 - *2021.10-2022.07*, SRT (Student Research Training): Worked at School of Software, topiced *compression algorithms in big data database*, advised by Prof. Shaoxu Song.
 
 # Honors and Awards
+- Academic Excellence in Research Award of Dept. of CST, 2022.09-2023.07
 - Comprehensive Scholarship (Scholarship from Prof. Zesheng Tang) of Dept. of CST, 2021.09-2022.07 
 - The third prize, the 40th Tsinghua Challenge Cup
 
@@ -48,6 +52,10 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 - *2018.09-2021.07*, Beijing No.9 Middle School.
 
 # Service and Voluntary Work
+
+- Maintainer: [Ouroboros](https://github.com/thunlp/Ouroboros) github repository
+
+- Maintainer: [MiniCPM](https://github.com/OpenBMB/MiniCPM) github repository
 
 - *2022 autumn - 2023 spring*: Supporting education for Qinghai University, involved in *The foundation of Programming (higher level)* teaching. Lecture 1: [Search](https://cloud.tsinghua.edu.cn/f/a32ef2f86127456abb43/?dl=1) (In Chinese). Lecture 2: [Graphs and Trees](https://cloud.tsinghua.edu.cn/f/a8a5b591cb6649a78936/?dl=1) (In Chinese).
 
