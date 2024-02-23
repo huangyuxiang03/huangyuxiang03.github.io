@@ -25,7 +25,7 @@ I am a 3rd year undergraduate student of Dept. of Computer Science and Technolog
 
 # Publications and Preprints 
 
-Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting](https://arxiv.org/pdf/2402.13720.pdf) arXiv preprint arXiv:2402.13720
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://arxiv.org/pdf/2402.13720.pdf) arXiv preprint arXiv:2402.13720
 
 Hu, S., Tu, Y., Han, X., Cui, G., He, C., Zhao, W., ... & Sun, M. (2024). [MiniCPM: Unveiling the Potential of End-side Large Language Models.](https://shengdinghu.notion.site/MiniCPM-Unveiling-the-Potential-of-End-side-Large-Language-Models-d4d3a8c426424654a4e80e42a711cb20) OpenBMB Blog.
 
@@ -39,7 +39,7 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 (Note: $^*$ indicates equal contribution.)
 
 # Research Experiences
-- *2022.07-now*: Working in THUNLP, dept. of CST. Topiced *efficient big model*.
+- *2022.07-now*: Working in THUNLP, dept. of CST. Topiced *efficient LLMs*.
 - *2021.10-2022.07*, SRT (Student Research Training): Worked at School of Software, topiced *compression algorithms in big data database*, advised by Prof. Shaoxu Song.
 
 # Honors and Awards
