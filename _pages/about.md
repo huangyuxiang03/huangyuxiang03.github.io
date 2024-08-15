@@ -17,19 +17,23 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a 3rd year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.91/4 overall GPA. My research interest is efficient AI and machine learning systems, recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in THUNLP with Weilin Zhao (PhD. Student), Xu Han (Postdoc) and Zhiyuan Liu (Professor).
+I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.91/4 overall GPA. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in THUNLP with Weilin Zhao (PhD. Student), Xu Han (Assist. Research Professor) and Zhiyuan Liu (Assoc. Professor).
+
+- News: One paper (CA-LoRA) accepted by COLM. See you in Philadelphia in October!
 
 - News: Recently I have been working on efficient decoding algorithms. We have released  "Ouroboros", a new Speculative Decoding algorithm with Large Model Enhanced Drafting. Please refer to [Paper](https://arxiv.org/pdf/2402.13720.pdf) and [Code](https://github.com/thunlp/Ouroboros). It achieves speedups of up to $1.9\times$ and $2.8\times$ compared to lookahead decoding and speculative decoding, without any training.
 
-- News: I am involved in the [MiniCPM](https://github.com/OpenBMB/MiniCPM) project of ModelBest Inc., OpenBMB and THUNLP. It is an end-side LLM outperforms Llama2-13B. I am responsible to model inference. 
+<!-- - News: I am involved in the [MiniCPM](https://github.com/OpenBMB/MiniCPM) project of ModelBest Inc., OpenBMB and THUNLP. It is an end-side LLM outperforms Llama2-13B. I am responsible to model inference.  -->
 
 # Publications and Preprints 
+
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., Li, K., Chen, C., Yang, T. & Sun, M. (2024). [CA-LoRA: Adapting Existing LoRA for Compressed LLMs to
+Enable Efficient Multi-Tasking on Personal Devices.](https://arxiv.org/pdf/2307.07705.pdf) Conference on Language Modeling (COLM 2024).
 
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://arxiv.org/pdf/2402.13720.pdf) arXiv preprint arXiv:2402.13720
 
 Hu, S., Tu, Y., Han, X., Cui, G., He, C., Zhao, W., ... & Sun, M. (2024). [MiniCPM: Unveiling the Potential of End-side Large Language Models.](https://shengdinghu.notion.site/MiniCPM-Unveiling-the-Potential-of-End-side-Large-Language-Models-d4d3a8c426424654a4e80e42a711cb20) OpenBMB Blog.
 
-Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., & Sun, M. (2023). [CPET: Effective Parameter-Efficient Tuning for Compressed Large Language Models.](https://arxiv.org/pdf/2307.07705.pdf) arXiv preprint arXiv:2307.07705.
 
 Qin, Y., Hu, S., Lin, Y., Chen, W., Ding, N., Cui, G., ... & Sun, M. (2023). [Tool Learning with Foundation Models.](https://arxiv.org/pdf/2304.08354.pdf) arXiv preprint arXiv:2304.08354.
 
