@@ -29,7 +29,7 @@ I am a 4th year undergraduate student of Dept. of Computer Science and Technolog
 
 # Publications and Preprints 
 
-Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://arxiv.org/pdf/2402.13720.pdf) arXiv preprint arXiv:2402.13720. EMNLP 2024 main.
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://arxiv.org/pdf/2402.13720.pdf) Main Conference of Empirical Methods in Natural Language Processing (EMNLP 2024 main).
 
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., Li, K., Chen, C., Yang, T., & Sun, M. (2024). [CA-LoRA: Adapting Existing LoRA for Compressed LLMs to
 Enable Efficient Multi-Tasking on Personal Devices.](https://arxiv.org/pdf/2307.07705.pdf) Conference on Language Modeling (COLM 2024).
