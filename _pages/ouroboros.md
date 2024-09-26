@@ -1,7 +1,7 @@
 ---
 permalink: /blogs/ouroboros
 title: "Ouroboros"
-layout: defaults
+layout: default
 ---
 
 # Ouroboros: Speculative Decoding that is Relatively Fast and Abusolutely Accurate
