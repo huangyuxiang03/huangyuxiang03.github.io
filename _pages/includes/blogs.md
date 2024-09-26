@@ -1,5 +1,5 @@
 ---
-permalink: /
+permalink: /#blogs
 title: ""
 excerpt: ""
 author_profile: true
