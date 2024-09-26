@@ -1,12 +1,7 @@
 ---
-permalink: /#blogs
-title: ""
-excerpt: ""
-author_profile: true
-redirect_from: 
-  - /blogs/
-  - /#blogs/
-  - /blogs.html
+permalink: /blogs/
+layout: default
+title: "new page"
 ---
 
 # blogs
