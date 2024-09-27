@@ -4,7 +4,7 @@ title: "blogs"
 layout: default
 ---
 
-# Blogs (Academic)
+# Blogs
 
 ## [2024/09] [Locret: Enabling Long-Context Inference on Personal Devices](blogs/locret.md)
 
@@ -12,7 +12,7 @@ layout: default
 
 ## [2024/09] [CA-LoRA: Personal Devices-Friendly Downstream Task Adapting](blogs/calora.md)
 
-# Blogs (Non-Academic)
+# Non-Academic Stuff
 
 ## [2024/10] [A Guidebook of Exchange Studies for DST@THU Students (In Chinese) | 贵系交换指南 | Unfinished](TODO)
 
