@@ -1,6 +1,6 @@
 ---
-permalink: /blogs/locret
-title: "Locret"
+permalink: /blogs_locret
+title: ""
 layout: default
 ---
 

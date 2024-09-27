@@ -1,6 +1,6 @@
 ---
 permalink: /blogs_ouroboros
-title: "Ouroboros"
+title: ""
 layout: default
 ---
 

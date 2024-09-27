@@ -1,6 +1,6 @@
 ---
-permalink: /blogs/calora
-title: "CA-LoRA"
+permalink: /blogs_calora
+title: ""
 layout: default
 ---
 
