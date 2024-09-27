@@ -1,7 +1,7 @@
 ---
 permalink: /blogs/ouroboros
 title: "Ouroboros"
-layout: compress
+layout: default
 ---
 
 
