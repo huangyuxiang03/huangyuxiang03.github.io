@@ -2,6 +2,8 @@
 permalink: /blogs/ouroboros
 title: "Ouroboros"
 layout: default
+excerpt: ""
+author_profile: true
 ---
 
 
