@@ -6,6 +6,9 @@ main:
   - title: "Blogs"
     url: "/blogs"
 
+  - title: "Blogs/Ouroboros"
+    url: "/blogs/ouroboros"
+
   # - title: "News"
   #   url: "/#-news"
 

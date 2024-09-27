@@ -126,12 +126,6 @@ defaults:
     values:
       layout: default
       author_profile: true
-  - scope:
-      path: "_pages/blogs"
-      type: pages
-    values:
-      layout: default
-      author_profile: true
 
 
 # Sass/SCSS
