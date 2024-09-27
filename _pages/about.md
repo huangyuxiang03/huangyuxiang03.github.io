@@ -17,7 +17,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in THUNLP with Weilin Zhao (PhD. Student), Xu Han (Assist. Researcher) and Zhiyuan Liu (Assoc. Professor).
+I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in [THUNLP](https://nlp.csai.tsinghua.edu.cn/) with [Weilin Zhao](https://achazwl.github.io/) (PhD. Student), [Xu Han](https://thucsthanxu13.github.io/) (Assist. Researcher) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Professor).
 
 - News: One paper (Ouroboros) accepted by EMNLP 2024 main.
 
@@ -32,9 +32,9 @@ I am a 4th year undergraduate student of Dept. of Computer Science and Technolog
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://arxiv.org/pdf/2402.13720.pdf) Main Conference of Empirical Methods in Natural Language Processing (EMNLP 2024 main).
 
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., Li, K., Chen, C., Yang, T., & Sun, M. (2024). [CA-LoRA: Adapting Existing LoRA for Compressed LLMs to
-Enable Efficient Multi-Tasking on Personal Devices.](https://arxiv.org/pdf/2307.07705.pdf) Conference on Language Modeling (COLM 2024).
+Enable Efficient Multi-Tasking on Personal Devices.](https://openreview.net/pdf?id=kpf7UbnSAm) Conference on Language Modeling (COLM 2024).
 
-Hu, S., Tu, Y., Han, X., Cui, G., He, C., Zhao, W., ... & Sun, M. (2024). [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](https://arxiv.org/pdf/2404.06395) Conference on Language Modeling (COLM 2024).
+Hu, S., Tu, Y., Han, X., Cui, G., He, C., Zhao, W., ... & Sun, M. (2024). [MiniCPM: Unveiling the Potential of Small Language Models with Scalable Training Strategies](https://openreview.net/pdf?id=3X2L2TFr0f) Conference on Language Modeling (COLM 2024).
 
 Qin, Y., Hu, S., Lin, Y., Chen, W., Ding, N., Cui, G., ... & Sun, M. (2023). [Tool Learning with Foundation Models.](https://arxiv.org/pdf/2304.08354.pdf) arXiv preprint arXiv:2304.08354.
 
