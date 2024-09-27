@@ -7,7 +7,7 @@ main:
     url: "/blogs"
 
   - title: "Blogs/Ouroboros"
-    url: "/blogs/ouroboros"
+    url: "/blogs_ouroboros"
 
   # - title: "News"
   #   url: "/#-news"

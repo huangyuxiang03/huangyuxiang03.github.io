@@ -1,5 +1,5 @@
 ---
-permalink: /blogs/ouroboros
+permalink: /blogs_ouroboros
 title: "Ouroboros"
 layout: default
 ---
