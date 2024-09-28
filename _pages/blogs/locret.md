@@ -104,6 +104,7 @@ Here is the overall framework design of Locret, where we first find the importan
 #### Retaining Head and Causal Importance Score
 
 As drawn in Figure [2](#framework), we inject additional parameters, named **retaining head** (denote as $\mathbf{R}$ for simplicity), to each attention module. The retaining head is an FFN consist of two matrixes and one non-linear activation, i.e. 
+
 $$\mathbf{R}(\mathbf{x}) = \sigma(\mathbf{xW_1})\mathbf{W_2}.$$
 
 The input of the retaining head is the concatenation $[\mathbf{Q}, \mathbf{K}, \mathbf{V}]$, and output the number of KV heads values representing the importance, which we name **causal importance score (CIS)**. It is implemented as the following code (pytorch style).
@@ -117,25 +118,31 @@ cis = self.retaining_head_w2(
 )
 ```
 
-Formally, it is written as the following equation, where $\tilde S[k]_j^{(i)}$ is the CIS score of the $k$-th token at layer $i$ head $j$, i.e. `cis[:, k, j]` at layer $i$.
-$$\tilde S[k]_j^{(i)} = \sigma([\mathbf{Q}, \mathbf{K}, \mathbf{V}]\mathbf{W}_1)\mathbf{W_2}$$
+Formally, it is written as the following equation, where 
+$\mathbf{\tilde S}[k]_j^{(i)}$ is the CIS score of the $k$-th token at layer $i$ head $j$, i.e. `cis[:, k, j]` at layer $i$.
+
+$$\mathbf{\tilde S}[k]_j^{(i)} = \sigma([\mathbf{Q}, \mathbf{K}, \mathbf{V}]\mathbf{W}_1)\mathbf{W_2}$$
 
 #### Training Object
 
-We generate the labels of CIS as follows. The retaining heads are trained on a small Question-Answer SFT dataset, where each entry consists of a single prompt and one answer. The CIS label of the $k$-th token at layer $i$ head $j$ is 
+We generate the labels of CIS as follows. The retaining heads are trained on a small Question-Answer SFT dataset, where each entry consists of a single prompt and one answer. The CIS label of the $k$-th token at layer $i$ head $j$ is
+
 $$\mathbf{S}[k]_j^{(i)} := \max_{n_q(d) \leq p \leq n_q(d) + n_a(d)}\left(\mathbf{Q}_j^{(i)}\mathbf{K}_{j}^{(i)T}\right)_{p, k}, $$
+
 where $n_q(d)$ and $n_a(d)$ represent the lengths of the prompt and answer in data $d$.
 
 Note that the number of heads between Q and KV is not same in GQA models, thus we aggregate the maximum value among all the heads in the same kv group as the CIS label.
 
 By denoting the number of layers as $L$, number of heads as $h$, the training object is 
 
-$$\text{argmin} \lim_{\mathbf{W_1}^{(i)}, \mathbf{W_2}^{(i)}, i=1, 2\cdots, L} \mathbb{E}_{d\in \mathcal{D}}\left[\sum_{i=1}^{L}\sum_{j=1}^{h}\sum_{k=1}^{n_q(d)}\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, 
+$$\text{argmin}_{\mathbf{W_1}^{(i)}, \mathbf{W_2}^{(i)}, i=1, 2\cdots, L} \mathbb{E}_{d\in \mathcal{D}}\left[\sum_{i=1}^{L}\sum_{j=1}^{h}\sum_{k=1}^{n_q(d)}\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, 
     \mathbf{S}[k]_j^{(i)}
     \right)\right]$$
 
 and the loss function $\mathcal{L}$ is 
+
 $$\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{S}[k]_j^{(i)}\right) = \text{Smooth-}\mathcal{L}_1\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{S}[k]_j^{(i)}\right) + \alpha \mathcal{L}_2\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{\tilde S}[k-1]_j^{(i)}\right),$$
+
 where Smooth-$\mathcal{L}_1$ is the smooth 1-norm and $\mathcal{L}_2$ represents the 2-norm.
 
 Following the recipe above, we train the retaining heads on **LongAlpaca** for **3000 steps** only. **The training cost is less than 1 GPU hours.**
@@ -147,7 +154,7 @@ Now we have an accurate scoring function that can predict the CIS. We adopt chun
 As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every head and every layer, named **stabilizers**, to obtain a better performance. We maintain a cache set with a static budget size $b$, and conduct chunked prefill. When the next chunk is process, we first calculate the CIS, then we assign $+\infty$ to the stabilizers. Then, we concatenate the cache provided in the current chunk with the cache set, and retain cache units with the highest $b-n_s$ CIS. By this way, the spatial complexity can be bounded to a constant, as the cache set has a constant size. The retaining heads are able to provide an accurate scoring funtion and retain the most important cache units towards latter operations. The pseudocode of Locret Inference is described in Algorithm [1](inference).
 
 <div id="inference" style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/inference.png" alt="desc" style="width: 100%;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/inference.png" alt="desc" style="width: 60%;">
 </div>
 
 
