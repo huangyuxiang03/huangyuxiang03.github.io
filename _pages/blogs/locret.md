@@ -14,12 +14,28 @@ layout: default
   <figcaption>Figure 1: The framework of Locret.</figcaption>
 </div>
 
-
-<!-- ![](assets/locret/pattern.png) -->
+---
 
 ## Background
 
 ### Consumer-Grade Devices, End-Side LLMs and Long-Context Inference
+
+In recent years, we are observing a blooming trend of the development of Large Language Models (LLMs). Models exhibits a stronger performance on nearly all domains, and practioners start to develop more compact models designed for consumer-grade devices.
+
+**Consumer-Grade Devices.** To obtain a better experience on LLM usage, hardware providers are designing and manufacturing cheaper and smaller GPUs, or implementing GPU and NPUs on a single SoC to reduce the overall cost for AI models. For example, Nvidia 4090 only has 24GB GPU memory and can be install on personal computers, while the price is controlled under $2000 U.S. dollars. Companies such as Apple and Qualcomm are now providing devices that is specially optimized for AI compute loads, such as matrix multiplication and sparse operations. However, such devices still suffer from severe inadequate GPU memory and limited compute power.
+
+**End-Side LLMs.** To tackle the obstacles of memory and compute, end-side LLMs are designed and trained to serve a delicate AI service on the user's side. Such models usually has a compact size less than 8B, usually around 1B-3B. MiniCPM consist of a series of  1.2B, 2.4B and 4B models, Phi-3-mini has a size around 3B and Llama-3.2 series is equipped with 1B and 3B models. Despite the reduced size, such LLMs exhibits strong ability and are often compared with 7B-8B models. To support more complicated tasks, e.g. multi-hop reasoning, needle-in-a-haystack and AI-driven operating systems, the context lengths of such models are often extended. MiniCPM-3-4B is capable to process 32K context, Phi-3-mini-128K and Llama-3.2-1B/3B even support 128K long-context inference, making it possible for end-side LLMs to obtain long-context abilities.
+
+**Long-Context Inference.** Compared to traditional short-context LLM inference, long-context LLM inference shifts the computing paradigm in two key ways: 
+
+- Increased computational overhead for attention mechanisms
+    
+    As context length grows, the computation required for obtaining attention scores increases quadratically, which results in a higher ratio of the computational budget in a transformer block;
+- Higher memory footprint for key-value (KV) caching
+
+    Longer contexts require larger KV caches, which dramatically increases the peak memory usage.
+
+These shifts demand innovative techniques to mitigate computational costs and manage memory usage effectively for long-context LLM inference. Consumer-grade devices cannot provide such memory space for KV cache, making the usage of end-side LLM obeying its original design. From such consideration, developing a KV cache compression algorithm for long-context inference on consumer-grade devices is vital for the democratization of LLMs.
 
 ### Existing Efficient Inference Approaches
 
