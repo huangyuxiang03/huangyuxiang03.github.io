@@ -129,7 +129,8 @@ where $n_q(d)$ and $n_a(d)$ represent the lengths of the prompt and answer in da
 Note that the number of heads between Q and KV is not same in GQA models, thus we aggregate the maximum value among all the heads in the same kv group as the CIS label.
 
 By denoting the number of layers as $L$, number of heads as $h$, the training object is 
-$$\argmin_{\mathbf{W_1}^{(i)}, \mathbf{W_2}^{(i)}, i=1, 2\cdots, L} \mathbb{E}_{d\in \mathcal{D}}\left[\sum_{i=1}^{L}\sum_{j=1}^{h}\sum_{k=1}^{n_q(d)}\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, 
+
+$$\text{argmin} \lim_{\mathbf{W_1}^{(i)}, \mathbf{W_2}^{(i)}, i=1, 2\cdots, L} \mathbb{E}_{d\in \mathcal{D}}\left[\sum_{i=1}^{L}\sum_{j=1}^{h}\sum_{k=1}^{n_q(d)}\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, 
     \mathbf{S}[k]_j^{(i)}
     \right)\right]$$
 
