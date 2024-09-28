@@ -9,7 +9,7 @@ layout: default
 
 **TL;DR:** We introduce **Locret**, a light-weight training-based KV cache compression method conducted by chunked prefill along with cache eviction. Locret achieves $20\times$ and $8\times$ KV cache compression ratio compared to the full cache for Phi-3-mini-128K and Llama-3.1-8B-instruct, respectively, with only <1 GPU hours training. Locret is robust and can be combined with multiple efficient inference approaches. To the best of our knowledge, Locret is the first framework capable of deploying Llama-3.1-8B or similar models on a single Nvidia 4090 GPU, enabling 128K long-context inference without compromising generation quality, and requiring little additional system optimizations.
 
-<div id="framework" style="text-align: center;">
+<div id="mem_task" style="text-align: center;">
   <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/memory_acc.png" alt="desc" style="width: 100%;">
   <figcaption>Figure 1: Memory Statistics vs. Task Performance of Locret.</figcaption>
 </div>
@@ -69,17 +69,9 @@ System Optimizations:
 
     More efficient programming languages, disaggregated inference frameworks can also enhance the efficiency of LLM long-context inference. 
 
-We list the pros and cons of each way of implementing efficient long-context inference.
+We list the pros and cons of each way of implementing efficient long-context inference in the [Appendix](#appendix).
 
-| Category | Type | Pros | Cons | Examples |
-|-|-|-|-|-|
-| Algorithm | Quantization | Barely no performance loss for >4-bits quantization. Easy to implement. | Severe performance loss at 2-bits. Slow inference speed. Need special hardware support. Constant size reduction of KV cache.| KIVI, KVQuant|
-| Algorithm | Sparsification | Very fast inference speed. Low runtime GPU memory requirement for internal variables. | Cannot reduce the size of KV cache at all. Observable performance drop for denser models, e.g. MLA and GQA models. | MInference, FastGen|
-| Algorithm | Token dropping - eviction | Fast inference speed and simple implementation. Memory usage can be bounded. | Severe performance degredation due to the inaccuracy of scoring functions. | H2O, SirLLM|
-| Algorithm | Token dropping - merging | Memory usage can be bounded. | Additional training is required for some algorithms. Severe performance loss if the post training is inadequate. | StreamingLLM, LoCoCo |
-| System | Offloading | Barely no performance degradation. | Very slow inference due to the limited I/O bandwidth. Delicate optimization of offloading is required. | InfLLM, FlexGen |
-| System | Hardware-aware algorithms | High utility of hardware architecture, fast inference speed and no accuracy drop at all. | Cannot reduce the size of KV cache at all. Need to be specially adapted to each hardware architecture. | Flash-Attention, Page-Attention | 
-| System | Better Infrastructures | Allows enterprise-level applications. | Extremely hard to develop. Low universality towards different scenarios. | KTransformers, HexGen |
+
 
 
 ### Inference Spatial Complexity
@@ -109,7 +101,54 @@ Here is the overall framework design of Locret, where we first find the importan
 
 ### Training to Evict
 
+#### Retaining Head and Causal Importance Score
+
+As drawn in Figure [2](#framework), we inject additional parameters, named **retaining head** (denote as $\mathbf{R}$ for simplicity), to each attention module. The retaining head is an FFN consist of two matrixes and one non-linear activation, i.e. 
+$$\mathbf{R}(\mathbf{x}) = \sigma(\mathbf{xW_1})\mathbf{W_2}.$$
+
+The input of the retaining head is the concatenation $[\mathbf{Q}, \mathbf{K}, \mathbf{V}]$, and output the number of KV heads values representing the importance, which we name **causal importance score (CIS)**. It is implemented as the following code (pytorch style).
+```python
+cis = self.retaining_head_w2(
+    self.act(
+        self.retaining_head_w1(
+            torch.cat([h_q, h_k, h_v], dim=-1)
+        )
+    )
+)
+```
+
+Formally, it is written as the following equation, where $\tilde S[k]_j^{(i)}$ is the CIS score of the $k$-th token at layer $i$ head $j$, i.e. `cis[:, k, j]` at layer $i$.
+$$\tilde S[k]_j^{(i)} = \sigma([\mathbf{Q}, \mathbf{K}, \mathbf{V}]\mathbf{W}_1)\mathbf{W_2}$$
+
+#### Training Object
+
+We generate the labels of CIS as follows. The retaining heads are trained on a small Question-Answer SFT dataset, where each entry consists of a single prompt and one answer. The CIS label of the $k$-th token at layer $i$ head $j$ is 
+$$\mathbf{S}[k]_j^{(i)} := \max_{n_q(d) \leq p \leq n_q(d) + n_a(d)}\left(\mathbf{Q}_j^{(i)}\mathbf{K}_{j}^{(i)T}\right)_{p, k}, $$
+where $n_q(d)$ and $n_a(d)$ represent the lengths of the prompt and answer in data $d$.
+
+Note that the number of heads between Q and KV is not same in GQA models, thus we aggregate the maximum value among all the heads in the same kv group as the CIS label.
+
+By denoting the number of layers as $L$, number of heads as $h$, the training object is 
+$$\argmin_{\mathbf{W_1}^{(i)}, \mathbf{W_2}^{(i)}, i=1, 2\cdots, L} \mathbb{E}_{d\in \mathcal{D}}\left[\sum_{i=1}^{L}\sum_{j=1}^{h}\sum_{k=1}^{n_q(d)}\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, 
+    \mathbf{S}[k]_j^{(i)}
+    \right)\right]$$
+
+and the loss function $\mathcal{L}$ is 
+$$\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{S}[k]_j^{(i)}\right) = \text{Smooth-}\mathcal{L}_1\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{S}[k]_j^{(i)}\right) + \alpha \mathcal{L}_2\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{\tilde S}[k-1]_j^{(i)}\right),$$
+where Smooth-$\mathcal{L}_1$ is the smooth 1-norm and $\mathcal{L}_2$ represents the 2-norm.
+
+Following the recipe above, we train the retaining heads on **LongAlpaca** for **3000 steps** only. **The training cost is less than 1 GPU hours.**
+
 ### Inference with Retaining Heads
+
+Now we have an accurate scoring function that can predict the CIS. We adopt chunked prefill and perform cache eviction based on the predicted CIS.
+
+As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every head and every layer, named **stabilizers**, to obtain a better performance. We maintain a cache set with a static budget size $b$, and conduct chunked prefill. When the next chunk is process, we first calculate the CIS, then we assign $+\infty$ to the stabilizers. Then, we concatenate the cache provided in the current chunk with the cache set, and retain cache units with the highest $b-n_s$ CIS. By this way, the spatial complexity can be bounded to a constant, as the cache set has a constant size. The retaining heads are able to provide an accurate scoring funtion and retain the most important cache units towards latter operations. The pseudocode of Locret Inference is described in Algorithm [1](inference).
+
+<div id="inference" style="text-align: center;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/inference.png" alt="desc" style="width: 100%;">
+</div>
+
 
 ---
 
@@ -143,3 +182,17 @@ Please refer to our ArXiV [paper](TODO).
   year={2024}
 }
 ```
+
+---
+
+## Appendix
+
+| Category | Type | Pros | Cons | Examples |
+|-|-|-|-|-|
+| Algorithm | Quantization | Barely no performance loss for >4-bits quantization. Easy to implement. | Severe performance loss at 2-bits. Slow inference speed. Need special hardware support. Constant size reduction of KV cache.| KIVI, KVQuant|
+| Algorithm | Sparsification | Very fast inference speed. Low runtime GPU memory requirement for internal variables. | Cannot reduce the size of KV cache at all. Observable performance drop for denser models, e.g. MLA and GQA models. | MInference, FastGen|
+| Algorithm | Token dropping - eviction | Fast inference speed and simple implementation. Memory usage can be bounded. | Severe performance degredation due to the inaccuracy of scoring functions. | H2O, SirLLM|
+| Algorithm | Token dropping - merging | Memory usage can be bounded. | Additional training is required for some algorithms. Severe performance loss if the post training is inadequate. | StreamingLLM, LoCoCo |
+| System | Offloading | Barely no performance degradation. | Very slow inference due to the limited I/O bandwidth. Delicate optimization of offloading is required. | InfLLM, FlexGen |
+| System | Hardware-aware algorithms | High utility of hardware architecture, fast inference speed and no accuracy drop at all. | Cannot reduce the size of KV cache at all. Need to be specially adapted to each hardware architecture. | Flash-Attention, Page-Attention | 
+| System | Better Infrastructures | Allows enterprise-level applications. | Extremely hard to develop. Low universality towards different scenarios. | KTransformers, HexGen |
