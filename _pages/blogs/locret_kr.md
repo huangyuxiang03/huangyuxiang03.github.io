@@ -5,7 +5,7 @@ layout: default
 ---
 
 # Locret: 개인 장치에서 장문 맥락 추론을 가능하게 하다
-2024/09 황유샹 @칭화대학교 & 홍콩과기대학교 [[中文](locret_zh.md)][[English](locret.md)][[にほんご](locret_jp.md)]
+2024/09 황우상 @칭화대학교 & 홍콩과기대학교 [[中文](locret_zh.md)][[English](locret.md)][[にほんご](locret_jp.md)]
 
 **요약:** 우리는 **Locret**를 소개합니다. 이는 분할 예비 채우기와 캐시 추방을 활용하는 경량의 훈련 기반 KV 캐시 압축 방법입니다. Locret는 Phi-3-mini-128K 및 Llama-3.1-8B-instruct에 대해 각각 전체 캐시 대비 $20\times$ 및 $8\times$ KV 캐시 압축 비율을 달성하며, 1시간 미만의 GPU 훈련만을 요구합니다. Locret는 견고하며 여러 효율적인 추론 방법과 호환됩니다. 우리가 알기로는, Locret는 Llama-3.1-8B 또는 이와 유사한 모델을 단일 Nvidia 4090 GPU에서 배포할 수 있는 최초의 프레임워크로, 128K 장문 맥락 추론을 품질 손실 없이 구현하며 최소한의 시스템 최적화를 요구합니다.
 
