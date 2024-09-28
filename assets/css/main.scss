@@ -107,3 +107,14 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+/* 修改代码块的字体大小 */
+pre code {
+font-size: 16px;  /* 调整为你想要的大小 */
+line-height: 1.5; /* 行高也可以适当调整 */
+}
+  
+/* 修改行内代码的字体大小 */
+code {
+font-size: 16px;
+}
