@@ -154,7 +154,7 @@ Now we have an accurate scoring function that can predict the CIS. We adopt chun
 As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every head and every layer, named **stabilizers**, to obtain a better performance. We maintain a cache set with a static budget size $b$, and conduct chunked prefill. When the next chunk is process, we first calculate the CIS, then we assign $+\infty$ to the stabilizers. Then, we concatenate the cache provided in the current chunk with the cache set, and retain cache units with the highest $b-n_s$ CIS. By this way, the spatial complexity can be bounded to a constant, as the cache set has a constant size. The retaining heads are able to provide an accurate scoring funtion and retain the most important cache units towards latter operations. The pseudocode of Locret Inference is described in Algorithm [1](inference).
 
 <div id="inference" style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/inference.png" alt="desc" style="width: 60%;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/inference.png" alt="desc" style="width: 65%;">
 </div>
 
 
