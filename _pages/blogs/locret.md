@@ -39,9 +39,71 @@ These shifts demand innovative techniques to mitigate computational costs and ma
 
 ### Existing Efficient Inference Approaches
 
-### Inference Complexity
+KV cache is always a bottleneck of inferene throughput, for which abunch of KV cache-centric efficient inference algorithms are proposed. We categorize them into *algorithm optimization* and *system optimization*
+
+Algorithm Optimization:
+
+- Quantization-based methods:
+
+    The KV cache is stored in low-bit representations, e.g. 2-bits or 4-bits. Quantization can be applyed to each token indivisually or by channel. 
+
+- Sparsity-based methods:
+
+    No KV cache reduction is carried out. When computing the attention matrix, find some pattern according to heads or layers, and approach the complete matrix by only calculate limited entries.
+
+- Token-dropping:
+    - Eviction-based. A scoring function (usually designed manually) is designed to assess the importance of each token (or each cache unit), then evict the units with low importance score.
+    - Token-merging (Attention Pool-based). A merging function is designed to mix multiple adjacent cache units into one single unit, e.g. StreamingLLM use a addition function to pool the cache units. 
+
+System Optimizations:
+
+- Offloading-base:
+
+    Divide the full cache into chunks, and offload most of them to CPU or disk memory. Only the most related ones are retrieved to GPU at each chunk of chunked prefill.
+
+- Hardaware-aware algorithms:
+
+    Flash-attention and Page-attention utilize the architecture of modern GPUs to implement a memory efficient attention kernel, reducing the runtime peak GPU memory.
+
+- Designing better infrastructures:
+
+    More efficient programming languages, disaggregated inference frameworks can also enhance the efficiency of LLM long-context inference. 
+
+We list the pros and cons of each way of implementing efficient long-context inference.
+
+| Category | Type | Pros | Cons | Examples |
+|-|-|-|-|-|
+| Algorithm | Quantization | Barely no performance loss for >4-bits quantization. Easy to implement. | Severe performance loss at 2-bits. Slow inference speed. Need special hardware support. Constant size reduction of KV cache.| KIVI, KVQuant|
+| Algorithm | Sparsification | Very fast inference speed. Low runtime GPU memory requirement for internal variables. | Cannot reduce the size of KV cache at all. Observable performance drop for denser models, e.g. MLA and GQA models. | MInference, FastGen|
+| Algorithm | Token dropping - eviction | Fast inference speed and simple implementation. Memory usage can be bounded. | Severe performance degredation due to the inaccuracy of scoring functions. | H2O, SirLLM|
+| Algorithm | Token dropping - merging | Memory usage can be bounded. | Additional training is required for some algorithms. Severe performance loss if the post training is inadequate. | StreamingLLM, LoCoCo |
+| System | Offloading | Barely no performance degradation. | Very slow inference due to the limited I/O bandwidth. Delicate optimization of offloading is required. | InfLLM, FlexGen |
+| System | Hardware-aware algorithms | High utility of hardware architecture, fast inference speed and no accuracy drop at all. | Cannot reduce the size of KV cache at all. Need to be specially adapted to each hardware architecture. | Flash-Attention, Page-Attention | 
+| System | Better Infrastructures | Allows enterprise-level applications. | Extremely hard to develop. Low universality towards different scenarios. | KTransformers, HexGen |
+
+
+### Inference Spatial Complexity
+
+From our perspective, existing technics of inference can be categorized according to their spatial complexity. Denote $n$ as the length of context and $c\geq 1$ is a constant.
+
+- $O(n^2)$: Quadratic complexity, e.g. vanilla full KV cache inference. This is extremely heavy for all kind of devices in long-context inference scenarios.
+
+- $O(c\times n)$: Linear complexity, e.g. full KV cache inference with chunked prefill. This complexity is very heavy for memory constrained scenarios, as the KV cache size increases when the context is longer.
+
+- $O(n/c)$: Linear complexity with constant reduction, e.g. quantization, sparse attention, and most system optimizations. This complexity can solve the long-context inference problem to some extent, as the size of KV cache can be significantly reduced when the constant $c$ is large enough. However, this complexity is unacceptable when the context length grows even longer, to 128K or even 1M tokens. 
+
+- $O(1)$: Constant complexity. This complexity can be implemented by two means: token dropping and RNN. Token dropping with a static budget size is $O(1)$, and RNNs such as Mamba and RWKV also have constant complexity during inference.
+
+In order to tackle the long-context inference problem, we would like to find an algorithm that is $O(1)$. **Thus, designing a better scoring function to resolve the inaccuracy in existing eviction-based algorithms is our target.** Apart from designing the scoring function by hand, we introduce a training paradigm to learn an accurate scoring function.
 
 ## Locret
+
+Here is the overall framework design of Locret, where we first find the importance scoring function by training, then we conduct eviction along with chunked prefill.
+
+<div id="framework" style="text-align: center;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/pattern.png" alt="desc" style="width: 60%;">
+  <figcaption>Figure 2: The framework of Locret.</figcaption>
+</div>
 
 ### Training to Evict
 
