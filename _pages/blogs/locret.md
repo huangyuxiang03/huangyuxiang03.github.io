@@ -7,7 +7,7 @@ layout: default
 # Locret: Enabling Long-Context Inference on Personal Devices
 2024/09 Yuxiang Huang @Tsinghua & HKUST
 
-**TL;DR:** We introduce **Locret**, a light-weight training-based KV cache compression method conducted by chunked prefill along with cache eviction. Locret achieves $20\times$ and $8\times$ KV cache compression ratio compared to the full cache for Phi-3-mini-128K and Llama-3.1-8B-instruct, respectively, with only <1 GPU hours training. Locret is robust and can be combined with multiple efficient inference approaches. To the best of our knowledge, Locret is the first framework capable of deploying Llama-3.1-8B or similar models on a single Nvidia 4090 GPU, enabling 128K long-context inference without compromising generation quality, and requiring little additional system optimizations.
+**TL;DR:** We introduce **Locret**, a lightweight training-based KV cache compression method that utilizes chunked prefill along with cache eviction. Locret achieves a $20\times$ and $8\times$ KV cache compression ratio compared to the full cache for Phi-3-mini-128K and Llama-3.1-8B-instruct, respectively, requiring less than 1 GPU hour of training. Locret is robust and compatible with multiple efficient inference methods. To our knowledge, Locret is the first framework capable of deploying Llama-3.1-8B or similar models on a single Nvidia 4090 GPU, enabling 128K long-context inference without sacrificing generation quality, and requiring minimal system optimization.
 
 <div id="mem_task" style="text-align: center;">
   <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/memory_acc.png" alt="desc" style="width: 100%;">
@@ -18,96 +18,94 @@ layout: default
 
 ## Background
 
-### Consumer-Grade Devices, End-Side LLMs and Long-Context Inference
+### Consumer-Grade Devices, End-Side LLMs, and Long-Context Inference
 
-In recent years, we are observing a blooming trend of the development of Large Language Models (LLMs). Models exhibits a stronger performance on nearly all domains, and practioners start to develop more compact models specially designed for consumer-grade devices.
+In recent years, we have witnessed a rapid expansion in the development of Large Language Models (LLMs). These models are demonstrating improved performance across nearly every domain, and developers are now focusing on creating more compact models specifically designed for consumer-grade devices.
 
-**Consumer-Grade Devices.** To obtain a better experience on LLM usage, hardware providers are designing and manufacturing cheaper and smaller GPUs, or implementing GPUs and NPUs on a single SoC to reduce the overall cost for AI models. For example, Nvidia 4090 only has 24GB GPU memory and can be installed on personal computers, while the price is controlled under $2000 U.S. dollars. Companies such as Apple and Qualcomm are now providing devices that is specially optimized for AI compute loads, such as matrix multiplication and sparse operations. However, such devices still suffer from severe inadequate GPU memory and limited compute power.
+**Consumer-Grade Devices.** To enhance the user experience with LLMs, hardware manufacturers are designing and producing cheaper, smaller GPUs, or integrating GPUs and NPUs into a single SoC to reduce the overall cost of AI models. For example, the Nvidia 4090, with only 24GB of GPU memory, can be installed in personal computers, and its price is controlled under $2000 USD. Companies like Apple and Qualcomm are also creating devices optimized for AI compute tasks, such as matrix multiplication and sparse operations. However, these devices still struggle with limited GPU memory and compute power.
 
-**End-Side LLMs.** To tackle the obstacles of memory and compute, end-side LLMs are designed and trained to serve a delicate AI service on the user's side. Such models usually has a compact size less than 8B, usually around 1B-3B. MiniCPM consist of a series of  1.2B, 2.4B and 4B models, Phi-3-mini has a size around 3B and Llama-3.2 series is equipped with 1B and 3B models. Despite the reduced size, such LLMs exhibits strong ability and are often compared with 7B-8B models. To support more complicated tasks, e.g. multi-hop reasoning, needle-in-a-haystack and AI-driven operating systems, the context lengths of such models are often extended. MiniCPM-3-4B is capable to process 32K context, Phi-3-mini-128K and Llama-3.2-1B/3B even support 128K long-context inference, making it possible for end-side LLMs to obtain long-context abilities.
+**End-Side LLMs.** To overcome the challenges of memory and computational constraints, end-side LLMs are designed and trained to provide efficient AI services on the user's device. These models typically have a compact size of less than 8B, often between 1B and 3B parameters. MiniCPM includes models ranging from 1.2B to 4B, Phi-3-mini is around 3B, and the Llama-3.2 series has 1B and 3B models. Despite their reduced size, these LLMs exhibit impressive capabilities, often rivaling 7B-8B models. To support more complex tasks like multi-hop reasoning, needle-in-a-haystack search, and AI-driven operating systems, these models are frequently designed to handle extended context lengths. MiniCPM-3-4B can process up to 32K tokens, and Phi-3-mini-128K and Llama-3.2-1B/3B even support 128K long-context inference, enabling end-side LLMs to perform long-context tasks effectively.
 
-**Long-Context Inference.** Compared to traditional short-context LLM inference, long-context LLM inference shifts the computing paradigm in two key ways: 
+**Long-Context Inference.** Long-context LLM inference differs from traditional short-context inference in two key ways:
 
 - Increased computational overhead for attention mechanisms
     
-    As context length grows, the computation required for obtaining attention scores increases quadratically, which results in a higher ratio of the computational budget in a transformer block;
-- Higher memory footprint for key-value (KV) caching
+    As the context length increases, the computation required for attention scores grows quadratically, consuming a larger portion of the computational budget within each transformer block.
 
-    Longer contexts require larger KV caches, which dramatically increases the peak memory usage.
+- Higher memory requirements for key-value (KV) caching
 
-These shifts demand innovative techniques to mitigate computational costs and manage memory usage effectively for long-context LLM inference. Consumer-grade devices cannot provide such memory space for KV cache, making the usage of end-side LLM obeying its original design. From such consideration, developing a KV cache compression algorithm for long-context inference on consumer-grade devices is vital for the democratization of LLMs.
+    Longer contexts necessitate larger KV caches, significantly increasing peak memory usage.
+
+These challenges call for innovative techniques to reduce computational costs and manage memory more efficiently for long-context LLM inference. Consumer-grade devices, with their limited memory, cannot fully support such caches, making it crucial to develop KV cache compression algorithms for long-context inference on these devices to democratize LLMs.
 
 ### Existing Efficient Inference Approaches
 
-KV cache is always a bottleneck of inference throughput, for which a bunch of KV cache-centric efficient inference algorithms are proposed. We categorize them into *algorithm optimization* and *system optimization*
+KV cache is often the bottleneck in inference throughput, leading to the development of several KV cache-centric efficient inference algorithms. We categorize them into *algorithm optimizations* and *system optimizations*.
 
 Algorithm Optimization:
 
 - Quantization-based methods:
 
-    The KV cache is stored in low-bit representations, e.g. 2-bits or 4-bits. Quantization can be applyed to each token indivisually or by channel. 
+    KV caches are stored in low-bit representations (e.g., 2-bits or 4-bits). Quantization can be applied either token-wise or by channel.
 
 - Sparsity-based methods:
 
-    No KV cache reduction is carried out. When computing the attention matrix, find some patterns according to heads or layers, and approach the complete matrix by only calculating limited entries.
+    No direct reduction of KV cache size is performed. Instead, attention matrix computation is optimized by identifying patterns in heads or layers, reducing the number of entries to be calculated.
 
 - Token-dropping:
-    - Eviction-based. A scoring function (usually designed manually) is designed to assess the importance of each token (or each cache unit), then evict the units with low importance score.
-    - Token-merging (Attention Pool-based). A merging function is designed to mix multiple adjacent cache units into one single unit, e.g. StreamingLLM use a addition function to pool the cache units. 
+    - Eviction-based: A scoring function (usually manually designed) assesses the importance of each token (or cache unit), and units with lower scores are evicted.
+    - Token-merging (Attention Pool-based): Multiple adjacent cache units are merged into a single unit, such as in StreamingLLM, which uses an addition function to pool cache units.
 
 System Optimizations:
 
-- Offloading-base:
+- Offloading-based:
 
-    Divide the full cache into chunks, and offload most of them to CPU or disk memory. Only the most related ones are retrieved to GPU at each chunk of chunked prefill.
+    The full cache is divided into chunks, and most of these chunks are offloaded to CPU or disk memory. Only the most relevant chunks are retrieved to the GPU during chunked prefill.
 
-- Hardaware-aware algorithms:
+- Hardware-aware algorithms:
 
-    Flash-attention and Page-attention utilize the architecture of modern GPUs to implement a memory efficient attention kernel, reducing the runtime peak GPU memory.
+    Techniques like Flash-attention and Page-attention leverage modern GPU architectures to implement memory-efficient attention kernels, reducing peak GPU memory usage.
 
 - Designing better infrastructures:
 
-    More efficient programming languages, disaggregated inference frameworks can also enhance the efficiency of LLM long-context inference. 
+    More efficient programming languages and disaggregated inference frameworks can also improve the efficiency of long-context LLM inference.
 
-We list the pros and cons of each way of implementing efficient long-context inference in the [Appendix](#appendix).
-
-
-
+A detailed comparison of the pros and cons of each approach for efficient long-context inference can be found in the [Appendix](#appendix).
 
 ### Inference Spatial Complexity
 
-From our perspective, existing technics of inference can be categorized according to their spatial complexity. Denote $n$ as the length of context and $c\geq 1$ is a constant.
+From our perspective, existing inference techniques can be categorized based on their spatial complexity. Let $n$ denote the context length, and let $c\geq 1$ be a constant.
 
-- $O(n^2)$: Quadratic complexity, e.g. vanilla full KV cache inference. This is extremely heavy for all kind of devices in long-context inference scenarios.
+- $O(n^2)$: Quadratic complexity, e.g., vanilla full KV cache inference. This complexity is extremely resource-intensive for all devices in long-context inference scenarios.
 
-- $O(c\times n)$: Linear complexity, e.g. full KV cache inference with chunked prefill. This complexity is very heavy for memory constrained scenarios, as the KV cache size increases when the context is longer.
+- $O(c\times n)$: Linear complexity, e.g., full KV cache inference with chunked prefill. This complexity is still demanding in memory-constrained settings, as the KV cache size increases with context length.
 
-- $O(n/c)$: Linear complexity with constant reduction, e.g. quantization, sparse attention, and most system optimizations. This complexity can solve the long-context inference problem to some extent, as the size of KV cache can be significantly reduced when the constant $c$ is large enough. However, this complexity is unacceptable when the context length grows even longer, to 128K or even 1M tokens. 
+- $O(n/c)$: Linear complexity with constant reduction, e.g., quantization, sparse attention, and most system optimizations. While this complexity can reduce KV cache size significantly, it becomes impractical when context lengths extend to 128K or even 1M tokens.
 
-- $O(1)$: Constant complexity. This complexity can be implemented by two means: token dropping and RNN. Token dropping with a static budget size is $O(1)$, and RNNs such as Mamba and RWKV also have constant complexity during inference.
+- $O(1)$: Constant complexity. This complexity can be achieved through token dropping or by using RNNs. Token dropping with a fixed cache size is $O(1)$, and RNNs like Mamba and RWKV also maintain constant complexity during inference.
 
-In order to tackle the long-context inference problem, we would like to find an algorithm that is $O(1)$. **Thus, designing a better scoring function to resolve the inaccuracy in existing eviction-based algorithms is our target.** Apart from designing the scoring function by hand, we introduce a training paradigm to learn an accurate scoring function.
+To address the long-context inference challenge, we aim to design an algorithm with $O(1)$ complexity. **Our goal is to develop a better scoring function to improve the accuracy of existing eviction-based algorithms.** Instead of manually designing this function, we introduce a training paradigm to learn an accurate scoring function.
 
 ---
 
 ## Locret
 
-Here is the overall framework design of Locret, where we first find the importance scoring function by training, then we conduct eviction along with chunked prefill.
+The overall framework of Locret is outlined below, where we first train the importance scoring function, followed by cache eviction and chunked prefill.
 
 <div id="framework" style="text-align: center;">
   <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/pattern.png" alt="desc" style="width: 60%;">
   <figcaption>Figure 2: The framework of Locret.</figcaption>
 </div>
 
-### Training to Evict
+### Training for Eviction
 
 #### Retaining Head and Causal Importance Score
 
-As drawn in Figure [2](#framework), we inject additional parameters, named **retaining head** (denote as $\mathbf{R}$ for simplicity), to each attention module. The retaining head is an FFN consist of two matrixes and one non-linear activation, i.e. 
+As depicted in Figure [2](#framework), we introduce an additional parameter called **retaining head** (denoted as $\mathbf{R}$) for each attention module. The retaining head is an FFN composed of two matrices and a non-linear activation function, defined as:
 
 $$\mathbf{R}(\mathbf{x}) = \sigma(\mathbf{xW_1})\mathbf{W_2}.$$
 
-The input of the retaining head is the concatenation $[\mathbf{Q}, \mathbf{K}, \mathbf{V}]$, and output the number of KV heads values representing the importance, which we name **causal importance score (CIS)**. It is implemented as the following code (pytorch style).
+The input to the retaining head is the concatenation $[\mathbf{Q}, \mathbf{K}, \mathbf{V}]$, and it outputs the number of KV head values representing the importance, which we refer to as the **causal importance score (CIS)**. The PyTorch-style code implementation is shown below:
 ```python
 cis = self.retaining_head_w2(
     self.act(
@@ -123,88 +121,87 @@ $\mathbf{\tilde S}[k]_j^{(i)}$ is the CIS score of the $k$-th token at layer $i$
 
 $$\mathbf{\tilde S}[k]_j^{(i)} = \sigma([\mathbf{Q}, \mathbf{K}, \mathbf{V}]\mathbf{W}_1)\mathbf{W_2}$$
 
-#### Training Object
+#### Training Objective
 
-We generate the labels of CIS as follows. The retaining heads are trained on a small Question-Answer SFT dataset, where each entry consists of a single prompt and one answer. The CIS label of the $k$-th token at layer $i$ head $j$ is
+We generate the labels for CIS as follows. The retaining heads are trained on a small Question-Answer SFT dataset, where each entry consists of a single prompt and one answer. The CIS label for the $k$-th token at layer $i$ head $j$ is:
 
 $$\mathbf{S}[k]_j^{(i)} := \max_{n_q(d) \leq p \leq n_q(d) + n_a(d)}\left(\mathbf{Q}_j^{(i)}\mathbf{K}_{j}^{(i)T}\right)_{p, k}, $$
 
 where $n_q(d)$ and $n_a(d)$ represent the lengths of the prompt and answer in data $d$.
 
-Note that the number of heads between Q and KV is not same in GQA models, thus we aggregate the maximum value among all the heads in the same kv group as the CIS label.
+Note that the number of heads between Q and KV is not the same in GQA models, so we aggregate the maximum value among all the heads in the same KV group as the CIS label.
 
-By denoting the number of layers as $L$, number of heads as $h$, the training object is 
+Let $L$ denote the number of layers and $h$ the number of heads. The training objective is:
 
 $$\text{argmin}_{\mathbf{W_1}^{(i)}, \mathbf{W_2}^{(i)}, i=1, 2\cdots, L} \mathbb{E}_{d\in \mathcal{D}}\left[\sum_{i=1}^{L}\sum_{j=1}^{h}\sum_{k=1}^{n_q(d)}\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, 
     \mathbf{S}[k]_j^{(i)}
     \right)\right]$$
 
-and the loss function $\mathcal{L}$ is 
+and the loss function $\mathcal{L}$ is:
 
 $$\mathcal{L}\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{S}[k]_j^{(i)}\right) = \text{Smooth-}\mathcal{L}_1\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{S}[k]_j^{(i)}\right) + \alpha \mathcal{L}_2\left(\mathbf{\tilde S}[k]_j^{(i)}, \mathbf{\tilde S}[k-1]_j^{(i)}\right),$$
 
-where Smooth-$\mathcal{L}_1$ is the smooth 1-norm and $\mathcal{L}_2$ represents the 2-norm.
+where Smooth-$\mathcal{L}_1$ is the smooth 1-norm and $\mathcal{L}_2$ is the 2-norm.
 
-Following the recipe above, we train the retaining heads on **LongAlpaca** for **3000 steps** only. **The training cost is less than 1 GPU hours.**
+Following this approach, we train the retaining heads on **LongAlpaca** for **3000 steps**. **The training time is less than 1 GPU hour.**
 
 ### Inference with Retaining Heads
 
-Now we have an accurate scoring function that can predict the CIS. We adopt chunked prefill and perform cache eviction based on the predicted CIS.
+We now have an accurate scoring function capable of predicting the CIS. We use chunked prefill and perform cache eviction based on the predicted CIS.
 
-As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every head and every layer, named **stabilizers**, to obtain a better performance. We maintain a cache set with a static budget size $b$, and conduct chunked prefill. When the next chunk is process, we first calculate the CIS, then we assign $+\infty$ to the stabilizers. Then, we concatenate the cache provided in the current chunk with the cache set, and retain cache units with the highest $b-n_s$ CIS. By this way, the spatial complexity can be bounded to a constant, as the cache set has a constant size. The retaining heads are able to provide an accurate scoring funtion and retain the most important cache units towards latter operations. The pseudocode of Locret Inference is described in Algorithm [1](#inference).
+As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every head and layer, called **stabilizers**, to enhance performance. We maintain a cache set with a static budget size $b$ and apply chunked prefill. When processing the next chunk, we first calculate the CIS, assign $+\infty$ to the stabilizers, then concatenate the current chunk’s cache with the cache set. Finally, we retain the cache units with the highest $b-n_s$ CIS scores. This method keeps the spatial complexity constant, as the cache set has a fixed size. The retaining heads allow accurate scoring and retain the most critical cache units for subsequent operations. The pseudocode for Locret Inference is shown in Algorithm [1](#inference).
 
 <div id="inference" style="text-align: center;">
   <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/inference.png" alt="desc" style="width: 65%;">
 </div>
 
 
----
 
-## Benchmark: Budget-Constrainted Long-Context Inference
+---
+## Benchmark: Budget-Constrained Long-Context Inference
 
 ### Performance Benchmark
 
-We select 5 baselines corresponding to existing methods, compared with Locret, on Phi-3-mini-128K and Llama-3.1-8B-instruct. The budget size of Locret is 6000 and 16384, respectively. Baselines are described as below.
+We selected 5 baseline methods, which correspond to existing approaches, and compared them with Locret on Phi-3-mini-128K and Llama-3.1-8B-instruct. The budget size for Locret was set to 6000 and 16384, respectively. The baselines are described below:
 
 | Method | FullAttn | InfLLM | HF-2bits | SirLLM | MInference |
-| - | - | - | - | - | - | 
-| Category | Vanilla full KV Cache | System: Offloading | Algorithm: Quantization | Algorithm: Token dropping-eviction | Algorithm: Sparsification |
+|--------|----------|--------|----------|--------|------------|
+| Category | Vanilla full KV Cache | System: Offloading | Algorithm: Quantization | Algorithm: Token Dropping-Eviction | Algorithm: Sparsification |
 
-Results are shown in Figure [1](#mem_task). Locret obtains the highest benchmark score using relatively low memory. Methods that have lower memory usage compared with Locret fail completely in some settings or all settings.
+The results are displayed in Figure [1](#mem_task). Locret achieved the highest benchmark score while using relatively low memory. Methods with lower memory usage than Locret completely failed in some or all settings.
 
 ### Speed Benchmark
 
-We also concern the inference speed of Locret. Thus we compare our method with all the baselines on **a single Nvidia 4090** that only has 24GB GPU memory. Results are as follows. Note that some method cannot operate in such extreme environment, thus we truncate the input context until the corresponding method can execute without OOM error.
+We also evaluated the inference speed of Locret. We compared our method with all baselines on **a single Nvidia 4090**, which has only 24GB of GPU memory. The results are as follows. Note that some methods could not operate in such a constrained environment, so we truncated the input context until the corresponding method could run without causing an OOM error.
 
 | Model | Metrics | FullAttn | InfLLM | HF-2bits | SirLLM | MInference | **Locret** | HF-2bits* | MInference* | 
-| - | - | - | - | - | - | - | - | - | - |
+|-------|---------|----------|--------|----------|--------|------------|------------|-----------|-------------|
 | Phi-3-mini-128K | tok/s | - | 2276.38 | - | 2352.20 | - | **5080.85** | 1098.51 | 4099.92 |
 | Phi-3-mini-128K | Context Length | 128K | 128K | 128K | 128K | 128K | **128K** | 30K | 14K |
-| Phi-3-mini-128K | Accuracy | OOM | 99.83 | OOM | 1.69 | OOM | **100.00** | 0.00 | 13.56 | 
-| Llama-3.1-8B-instruct | tok/s | - | 2287.66 | 1365.51 | 1589.75 | -  | **3209.10** | 3680.06 | 5135.74 |
+| Phi-3-mini-128K | Accuracy | OOM | 99.83 | OOM | 1.69 | OOM | **100.00** | 0.00 | 13.56 |
+| Llama-3.1-8B-instruct | tok/s | - | 2287.66 | 1365.51 | 1589.75 | - | **3209.10** | 3680.06 | 5135.74 |
 | Llama-3.1-8B-instruct | Context Length | 128K | 128K | 128K | 128K | 128K | **128K** | 30K | 25K |
 | Llama-3.1-8B-instruct | Accuracy | OOM | 100.00 | 35.59 | 1.69 | OOM | **100.00** | 26.78 | 20.34 |
 
-
 ### Orthogonality to Quantization and Token Merging 
 
-Previous research indicates that eviction-based methods like H2O struggle with compatibility when combined with KV cache quantization. However, Locret is robust when quantization is applied. 
+Previous research has shown that eviction-based methods like H2O struggle when combined with KV cache quantization. However, Locret is robust even when quantization is applied.
 
 | Setting | M | M-4bits | $-\Delta$ |
-| - | - | - | - |
+|---------|---|--------|----------|
 | M=FullAttn | 29.08 | 28.52 | 0.56 |
-| M=Locret | 27.96 | 27.11 | 0.85 | 
+| M=Locret | 27.96 | 27.11 | 0.85 |
 
-The performance drop caused by quantization on Locret is only slightly higher than that observed with the full attention method, indicating that Locret is a quantization-friendly approach.
+The performance drop due to quantization on Locret is only slightly greater than that observed with the full attention method, indicating that Locret is a quantization-friendly approach.
 
-We can also host an attention pool with static size to store the evicted cache units. LoCoCo does so by applying convolution to non heavy-hitters identified by H2O. By replacing H2O to Locret, we get the combination of these two methods. 
+Additionally, we can maintain an attention pool with a static size to store evicted cache units. LoCoCo achieves this by applying convolution to the non-heavy-hitters identified by H2O. By replacing H2O with Locret, we obtain a combination of both methods.
 
 | Method | LoCoCo | Locret | **Combination** |
-| - | - | - | - |
-| L-Eval | 26.01 | 27.96 | 28.70 | 
+|--------|--------|--------|-----------------|
+| L-Eval | 26.01  | 27.96  | 28.70            |
 
-Locret achieves a higher score than LoCoCo, and the combined algorithm outperforms both standalone methods. 
-This suggests that Locret provides a more accurate scoring function compared to H2O, and the two methods complement each other, demonstrating their orthogonality.
+Locret achieved a higher score than LoCoCo, and the combined algorithm outperformed both standalone methods. This suggests that Locret provides a more accurate scoring function than H2O, and the two methods complement each other, demonstrating their orthogonality.
+
 
 
 
@@ -212,14 +209,14 @@ This suggests that Locret provides a more accurate scoring function compared to 
 
 ## Acknowlegement
 
-We gratefully appreciate the following indivisuals for there contribution. Without them, this project would be impossible to conduct.
+We gratefully acknowledge the following individuals for their contributions. Without their support, this project would not have been possible.
 
-- [Binhang Yuan](https://binhangyuan.github.io/site/) (Prof. @HKUST) The advisor of this project during Yuxiang's internship at HKUST.
-- [Xu Han](https://thucsthanxu13.github.io/) (Research Prof. @Tsinghua) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Prof. @Tsinghua) The advisors from THUNLP lab, who provided so much useful assists and valuable opinions.
-- [Chaojun Xiao](https://xcjthu.github.io/) (PhD Stu. @Tsinghua) The author of InfLLM, who provided valuable advices and proofread the paper. 
-- [Ruisi Cai](https://cairuisi.github.io/) (PhD Stu. @UT Austin) The author of LoCoCo, who offered aid to training LoCoCo and provided suggestions on extending LoCoCo to Llama-3.1 series.
-- [Xinrong Zhang](https://scholar.google.com/citations?hl=en&user=IvTrgR0AAAAJ) (PhD Stu. @Tsinghua) The author of InfiniteBench, who provided insights of the original design of the benchmark InfiniteBench.
-- [Weilin Zhao](https://achazwl.github.io/), [Chenyang Song](https://scholar.google.com/citations?user=4L39cy0AAAAJ&hl=en&oi=ao), [Shuo Wang](https://scholar.google.com/citations?user=5vm5yAMAAAAJ&hl=en&oi=ao) and [Yuan Yao](https://yaoyuanthu.github.io/) for valuable discussions.
+- [Binhang Yuan](https://binhangyuan.github.io/site/) (Professor @HKUST), advisor of this project during Yuxiang's internship at HKUST.
+- [Xu Han](https://thucsthanxu13.github.io/) (Research Professor @Tsinghua) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Professor @Tsinghua), advisors from the THUNLP lab, who provided invaluable assistance and insightful feedback.
+- [Chaojun Xiao](https://xcjthu.github.io/) (PhD Student @Tsinghua), author of InfLLM, who offered valuable advice and proofread the paper.
+- [Ruisi Cai](https://cairuisi.github.io/) (PhD Student @UT Austin), author of LoCoCo, who helped with training LoCoCo and provided suggestions for extending it to the Llama-3.1 series.
+- [Xinrong Zhang](https://scholar.google.com/citations?hl=en&user=IvTrgR0AAAAJ) (PhD Student @Tsinghua), author of InfiniteBench, who offered insights into the original design of the InfiniteBench benchmark.
+- [Weilin Zhao](https://achazwl.github.io/), [Chenyang Song](https://scholar.google.com/citations?user=4L39cy0AAAAJ&hl=en&oi=ao), [Shuo Wang](https://scholar.google.com/citations?user=5vm5yAMAAAAJ&hl=en&oi=ao), and [Yuan Yao](https://yaoyuanthu.github.io/) for their valuable discussions.
 
 ---
 
@@ -240,12 +237,12 @@ Please refer to our ArXiV [paper](TODO).
 
 ## Appendix
 
-| Category | Type | Pros | Cons | Examples |
-|-|-|-|-|-|
-| Algorithm | Quantization | Barely no performance loss for >4-bits quantization. Easy to implement. | Severe performance loss at 2-bits. Slow inference speed. Need special hardware support. Constant size reduction of KV cache.| KIVI, KVQuant|
-| Algorithm | Sparsification | Very fast inference speed. Low runtime GPU memory requirement for internal variables. | Cannot reduce the size of KV cache at all. Observable performance drop for denser models, e.g. MLA and GQA models. | MInference, FastGen|
-| Algorithm | Token dropping - eviction | Fast inference speed and simple implementation. Memory usage can be bounded. | Severe performance degredation due to the inaccuracy of scoring functions. | H2O, SirLLM|
-| Algorithm | Token dropping - merging | Memory usage can be bounded. | Additional training is required for some algorithms. Severe performance loss if the post training is inadequate. | StreamingLLM, LoCoCo |
-| System | Offloading | Barely no performance degradation. | Very slow inference due to the limited I/O bandwidth. Delicate optimization of offloading is required. | InfLLM, FlexGen |
-| System | Hardware-aware algorithms | High utility of hardware architecture, fast inference speed and no accuracy drop at all. | Cannot reduce the size of KV cache at all. Need to be specially adapted to each hardware architecture. | Flash-Attention, Page-Attention | 
-| System | Better Infrastructures | Allows enterprise-level applications. | Extremely hard to develop. Low universality towards different scenarios. | KTransformers, HexGen |
+| Category   | Type                         | Pros                                                                 | Cons                                                                 | Examples                  |
+|------------|------------------------------|----------------------------------------------------------------------|----------------------------------------------------------------------|---------------------------|
+| Algorithm  | Quantization                 | Minimal performance loss with >4-bit quantization. Easy to implement. | Significant performance loss at 2-bits. Slow inference. Requires specialized hardware. Constant KV cache size reduction. | KIVI, KVQuant             |
+| Algorithm  | Sparsification               | Very fast inference speed. Low runtime GPU memory for internal variables. | No reduction in KV cache size. Noticeable performance drop in denser models (e.g., MLA, GQA). | MInference, FastGen        |
+| Algorithm  | Token Dropping - Eviction    | Fast inference speed and simple implementation. Bounded memory usage. | Significant performance degradation due to inaccurate scoring functions. | H2O, SirLLM               |
+| Algorithm  | Token Dropping - Merging     | Bounded memory usage.                                                 | Some algorithms require additional training. Severe performance loss if post-training is insufficient. | StreamingLLM, LoCoCo      |
+| System     | Offloading                   | Almost no performance degradation.                                    | Very slow inference due to limited I/O bandwidth. Requires careful offloading optimization. | InfLLM, FlexGen           |
+| System     | Hardware-Aware Algorithms    | High hardware utility, fast inference speed, no accuracy loss.        | No reduction in KV cache size. Needs adaptation for specific hardware architectures. | Flash-Attention, Page-Attention |
+| System     | Better Infrastructures       | Suitable for enterprise-level applications.                           | Extremely difficult to develop. Limited applicability across different scenarios. | KTransformers, HexGen     |
