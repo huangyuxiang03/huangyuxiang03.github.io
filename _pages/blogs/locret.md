@@ -49,7 +49,7 @@ Algorithm Optimization:
 
 - Sparsity-based methods:
 
-    No KV cache reduction is carried out. When computing the attention matrix, find some patterns according to heads or layers, and approach the complete matrix by only calculate limited entries.
+    No KV cache reduction is carried out. When computing the attention matrix, find some patterns according to heads or layers, and approach the complete matrix by only calculating limited entries.
 
 - Token-dropping:
     - Eviction-based. A scoring function (usually designed manually) is designed to assess the importance of each token (or each cache unit), then evict the units with low importance score.
