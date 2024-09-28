@@ -5,7 +5,7 @@ layout: default
 ---
 
 # Locret: Enabling Long-Context Inference on Personal Devices
-2024/09 Yuxiang Huang @Tsinghua & HKUST [中文](locret_zh.md)[한국어](locret_kr.md)[にほんご](locret_jp.md)
+2024/09 Yuxiang Huang @Tsinghua & HKUST [[中文](locret_zh.md)][[한국어](locret_kr.md)][[にほんご](locret_jp.md)]
 
 **TL;DR:** We introduce **Locret**, a lightweight training-based KV cache compression method that utilizes chunked prefill along with cache eviction. Locret achieves a $20\times$ and $8\times$ KV cache compression ratio compared to the full cache for Phi-3-mini-128K and Llama-3.1-8B-instruct, respectively, requiring less than 1 GPU hour of training. Locret is robust and compatible with multiple efficient inference methods. To our knowledge, Locret is the first framework capable of deploying Llama-3.1-8B or similar models on a single Nvidia 4090 GPU, enabling 128K long-context inference without sacrificing generation quality, and requiring minimal system optimization.
 
