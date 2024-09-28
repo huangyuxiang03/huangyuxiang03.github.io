@@ -96,6 +96,8 @@ From our perspective, existing technics of inference can be categorized accordin
 
 In order to tackle the long-context inference problem, we would like to find an algorithm that is $O(1)$. **Thus, designing a better scoring function to resolve the inaccuracy in existing eviction-based algorithms is our target.** Apart from designing the scoring function by hand, we introduce a training paradigm to learn an accurate scoring function.
 
+---
+
 ## Locret
 
 Here is the overall framework design of Locret, where we first find the importance scoring function by training, then we conduct eviction along with chunked prefill.
@@ -109,8 +111,12 @@ Here is the overall framework design of Locret, where we first find the importan
 
 ### Inference with Retaining Heads
 
+---
 
 ## Budget-Constrainted Long-Context Inference
+
+
+---
 
 ## Acknowlegement
 
