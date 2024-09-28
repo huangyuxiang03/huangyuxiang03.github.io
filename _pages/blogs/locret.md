@@ -39,7 +39,7 @@ These shifts demand innovative techniques to mitigate computational costs and ma
 
 ### Existing Efficient Inference Approaches
 
-KV cache is always a bottleneck of inferene throughput, for which abunch of KV cache-centric efficient inference algorithms are proposed. We categorize them into *algorithm optimization* and *system optimization*
+KV cache is always a bottleneck of inference throughput, for which abunch of KV cache-centric efficient inference algorithms are proposed. We categorize them into *algorithm optimization* and *system optimization*
 
 Algorithm Optimization:
 
