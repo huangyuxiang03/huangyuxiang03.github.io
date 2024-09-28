@@ -11,7 +11,7 @@ layout: default
 
 <div id="framework" style="text-align: center;">
   <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/memory_acc.png" alt="desc" style="width: 100%;">
-  <figcaption>Figure 1: The framework of Locret.</figcaption>
+  <figcaption>Figure 1: Memory Statistics vs. Task Performance of Locret.</figcaption>
 </div>
 
 ---
