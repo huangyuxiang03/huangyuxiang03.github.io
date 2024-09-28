@@ -9,13 +9,13 @@ layout: default
 
 **TL;DR:** We introduce **Locret**, a light-weight training-based KV cache compression method conducted by chunked prefill along with cache eviction. Locret achieves $20\times$ and $8\times$ KV cache compression ratio compared to the full cache for Phi-3-mini-128K and Llama-3.1-8B-instruct, respectively, with only <1 GPU hours training. Locret is robust and can be combined with multiple efficient inference approaches. To the best of our knowledge, Locret is the first framework capable of deploying Llama-3.1-8B or similar models on a single Nvidia 4090 GPU, enabling 128K long-context inference without compromising generation quality, and requiring little additional system optimizations.
 
-<!-- <div id="framework" style="text-align: center;">
-  <img src="assets/locret/pattern.png" alt="desc" style="width: 100%;">
+<div id="framework" style="text-align: center;">
+  <img src="{{ site.baseurl }}/assets/locret/pattern.png" alt="desc" style="width: 100%;">
   <figcaption>Figure 1: The framework of Locret.</figcaption>
-</div> -->
+</div>
 
 
-![](assets/locret/pattern.png)
+<!-- ![](assets/locret/pattern.png) -->
 
 ## Background
 
