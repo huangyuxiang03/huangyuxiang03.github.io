@@ -151,7 +151,7 @@ Following the recipe above, we train the retaining heads on **LongAlpaca** for *
 
 Now we have an accurate scoring function that can predict the CIS. We adopt chunked prefill and perform cache eviction based on the predicted CIS.
 
-As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every head and every layer, named **stabilizers**, to obtain a better performance. We maintain a cache set with a static budget size $b$, and conduct chunked prefill. When the next chunk is process, we first calculate the CIS, then we assign $+\infty$ to the stabilizers. Then, we concatenate the cache provided in the current chunk with the cache set, and retain cache units with the highest $b-n_s$ CIS. By this way, the spatial complexity can be bounded to a constant, as the cache set has a constant size. The retaining heads are able to provide an accurate scoring funtion and retain the most important cache units towards latter operations. The pseudocode of Locret Inference is described in Algorithm [1](inference).
+As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every head and every layer, named **stabilizers**, to obtain a better performance. We maintain a cache set with a static budget size $b$, and conduct chunked prefill. When the next chunk is process, we first calculate the CIS, then we assign $+\infty$ to the stabilizers. Then, we concatenate the cache provided in the current chunk with the cache set, and retain cache units with the highest $b-n_s$ CIS. By this way, the spatial complexity can be bounded to a constant, as the cache set has a constant size. The retaining heads are able to provide an accurate scoring funtion and retain the most important cache units towards latter operations. The pseudocode of Locret Inference is described in Algorithm [1](#inference).
 
 <div id="inference" style="text-align: center;">
   <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/locret/inference.png" alt="desc" style="width: 65%;">
@@ -160,7 +160,52 @@ As shown in Figure [2](#framework), we leave the last $n_s$ cache units at every
 
 ---
 
-## Budget-Constrainted Long-Context Inference
+## Benchmark: Budget-Constrainted Long-Context Inference
+
+### Performance Benchmark
+
+We select 5 baselines corresponding to existing methods, compared with Locret, on Phi-3-mini-128K and Llama-3.1-8B-instruct. The budget size of Locret is 6000 and 16384, respectively. Baselines are described as below.
+
+| Method | FullAttn | InfLLM | HF-2bits | SirLLM | MInference |
+| - | - | - | - | - | - | 
+| Category | Vanilla full KV Cache | System: Offloading | Algorithm: Quantization | Algorithm: Token dropping-eviction | Algorithm: Sparsification |
+
+Results are shown in Figure [1](#mem_task). Locret obtains the highest benchmark score using relatively low memory. Methods that have lower memory usage compared with Locret fail completely in some settings or all settings.
+
+### Speed Benchmark
+
+We also concern the inference speed of Locret. Thus we compare our method with all the baselines on **a single Nvidia 4090** that only has 24GB GPU memory. Results are as follows. Note that some method cannot operate in such extreme environment, thus we truncate the input context until the corresponding method can execute without OOM error.
+
+| Model | Metrics | FullAttn | InfLLM | HF-2bits | SirLLM | MInference | **Locret** | HF-2bits* | MInference* | 
+| - | - | - | - | - | - | - | - | - | - |
+| Phi-3-mini-128K | tok/s | - | 2276.38 | - | 2352.20 | - | **5080.85** | 1098.51 | 4099.92 |
+| Phi-3-mini-128K | Context Length | 128K | 128K | 128K | 128K | 128K | **128K** | 30K | 14K |
+| Phi-3-mini-128K | Accuracy | OOM | 99.83 | OOM | 1.69 | OOM | **100.00** | 0.00 | 13.56 | 
+| Llama-3.1-8B-instruct | tok/s | - | 2287.66 | 1365.51 | 1589.75 | -  | **3209.10** | 3680.06 | 5135.74 |
+| Llama-3.1-8B-instruct | Context Length | 128K | 128K | 128K | 128K | 128K | **128K** | 30K | 25K |
+| Llama-3.1-8B-instruct | Accuracy | OOM | 100.00 | 35.59 | 1.69 | OOM | **100.00** | 26.78 | 20.34 |
+
+
+### Orthogonality to Quantization and Token Merging 
+
+Previous research indicates that eviction-based methods like H2O struggle with compatibility when combined with KV cache quantization. However, Locret is robust when quantization is applied. 
+
+| Setting | M | M-4bits | $-\Delta$ |
+| - | - | - | - |
+| M=FullAttn | 29.08 | 28.52 | 0.56 |
+| M=Locret | 27.96 | 27.11 | 0.85 | 
+
+The performance drop caused by quantization on Locret is only slightly higher than that observed with the full attention method, indicating that Locret is a quantization-friendly approach.
+
+We can also host an attention pool with static size to store the evicted cache units. LoCoCo does so by applying convolution to non heavy-hitters identified by H2O. By replacing H2O to Locret, we get the combination of these two methods. 
+
+| Method | LoCoCo | Locret | **Combination** |
+| - | - | - | - |
+| L-Eval | 26.01 | 27.96 | 28.70 | 
+
+Locret achieves a higher score than LoCoCo, and the combined algorithm outperforms both standalone methods. 
+This suggests that Locret provides a more accurate scoring function compared to H2O, and the two methods complement each other, demonstrating their orthogonality.
+
 
 
 ---
