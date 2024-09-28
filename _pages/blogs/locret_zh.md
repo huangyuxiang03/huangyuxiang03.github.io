@@ -5,7 +5,7 @@ layout: default
 ---
 
 # Locret: 在个人设备上实现长上下文推理
-2024/09 黄宇翔 @清华大学 & 香港科技大学
+2024/09 黄宇翔 @清华大学 & 香港科技大学 [[English](locret.md)][[한국어](locret_kr.md)][[にほんご](locret_jp.md)]
 
 **简要总结:** 我们介绍了 **Locret**，一种轻量级的基于训练的 KV 缓存压缩方法，利用分块预填充和缓存驱逐。Locret 相比完整缓存，在 Phi-3-mini-128K 和 Llama-3.1-8B-instruct 上分别实现了 $20\times$ 和 $8\times$ 的 KV 缓存压缩比，并且只需要不到1小时的GPU训练时间。Locret 兼容多种高效推理方法，且具有鲁棒性。据我们所知，Locret 是第一个能够在单个 Nvidia 4090 GPU 上部署 Llama-3.1-8B 或类似模型的框架，支持 128K 长上下文推理而不牺牲生成质量，并且只需极少的系统优化。
 
