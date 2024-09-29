@@ -60,11 +60,11 @@ late_night_snack_data = {
   "message": f"{' '.join(late_night_snack)}",
 }
 os.makedirs('results', exist_ok=True)
-with open(f'results/breakfast.json', 'w') as outfile:
+with open(f'../_data/results/breakfast.json', 'w') as outfile:
     json.dump(breakfast_data, outfile, ensure_ascii=False)
-with open(f'results/lunch.json', 'w') as outfile:
+with open(f'../_data/results/lunch.json', 'w') as outfile:
     json.dump(lunch_data, outfile, ensure_ascii=False)
-with open(f'results/dinner.json', 'w') as outfile:
+with open(f'../_data/results/dinner.json', 'w') as outfile:
     json.dump(dinner_data, outfile, ensure_ascii=False)
-with open(f'results/lns.json', 'w') as outfile:
+with open(f'../_data/results/lns.json', 'w') as outfile:
     json.dump(late_night_snack_data, outfile, ensure_ascii=False)
