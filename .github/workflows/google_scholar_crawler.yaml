@@ -21,6 +21,7 @@ jobs:
         cd ./results
         git init
         git config --local user.name "huangyuxiang03"
+        git config --local user.email "huang-yx21@mails.tsinghua.edu.cn"
         export remote_repo="https://huangyuxiang03:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
         git add *.json
         git commit -m "Updated Citation Data"
