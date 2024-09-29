@@ -59,7 +59,7 @@ late_night_snack_data = {
   "label": "夜宵",
   "message": f"{' '.join(late_night_snack)}",
 }
-os.makedirs('results', exist_ok=True)
+os.makedirs('../_data/results', exist_ok=True)
 with open(f'../_data/results/breakfast.json', 'w') as outfile:
     json.dump(breakfast_data, outfile, ensure_ascii=False)
 with open(f'../_data/results/lunch.json', 'w') as outfile:
