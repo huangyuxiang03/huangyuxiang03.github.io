@@ -1,0 +1,28 @@
+name: Select Canteen
+
+on: 
+ page_build: 
+ schedule:
+  - cron:  '0 16 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Reqs
+      run: |
+        sudo apt-get install python3-setuptools
+    - name: Run
+      run: |
+        cd ./canteen_selector
+        pip3 install -r requirements.txt
+        python3 main.py
+        cd ./results
+        git init
+        git config --local user.name "huangyuxiang03"
+        git config --local user.email "huang-yx21@mails.tsinghua.edu.cn"
+        export remote_repo="https://huangyuxiang03:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+        git add *.json
+        git commit -m "Updated canteen"
+        git push "${remote_repo}" HEAD:canteen --force
