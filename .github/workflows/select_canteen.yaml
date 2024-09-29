@@ -18,7 +18,7 @@ jobs:
         cd ./canteen_selector
         pip3 install -r requirements.txt
         python3 main.py
-        cd ./results
+        cd ../_data/results
         git init
         git config --local user.name "huangyuxiang03"
         git config --local user.email "huang-yx21@mails.tsinghua.edu.cn"
