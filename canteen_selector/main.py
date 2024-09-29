@@ -42,22 +42,22 @@ late_night_snack = e_canteens[:3]
 breakfast_data = {
   "schemaVersion": 1,
   "label": "早餐",
-  "message": f"{' '.join(breakfast)}",
+  "message": f"{' | '.join(breakfast)}",
 }
 lunch_data = {
   "schemaVersion": 1,
   "label": "午餐",
-  "message": f"{' '.join(lunch)}",
+  "message": f"{' | '.join(lunch)}",
 }
 dinner_data = {
   "schemaVersion": 1,
   "label": "晚餐",
-  "message": f"{' '.join(dinner)}",
+  "message": f"{' | '.join(dinner)}",
 }
 late_night_snack_data = {
   "schemaVersion": 1,
   "label": "夜宵",
-  "message": f"{' '.join(late_night_snack)}",
+  "message": f"{' | '.join(late_night_snack)}",
 }
 os.makedirs('results', exist_ok=True)
 with open(f'results/breakfast.json', 'w') as outfile:
