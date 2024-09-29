@@ -14,13 +14,11 @@ redirect_from:
 {% assign gsDataBaseUrl = "https://raw.githubusercontent.com/" | append: site.repository | append: "/" %}
 {% endif %}
 {% assign url = gsDataBaseUrl | append: "google-scholar-stats/gs_data_shieldsio.json" %}
+{% assign c_url = gsDataBaseUrl | append: "canteen/breakfast.json" %}
 
 <span class='anchor' id='about-me'></span>
 
-{% assign breakfast = site.data.canteen_selector.results.breakfast %}
-{{ breakfast.message }}
-
-I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in [THUNLP](https://nlp.csai.tsinghua.edu.cn/) with [Weilin Zhao](https://achazwl.github.io/) (PhD. Student), [Xu Han](https://thucsthanxu13.github.io/) (Assist. Researcher) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Professor). I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in [THUNLP](https://nlp.csai.tsinghua.edu.cn/) with [Weilin Zhao](https://achazwl.github.io/) (PhD. Student), [Xu Han](https://thucsthanxu13.github.io/) (Assist. Researcher) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Professor). I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. <a href=''><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&label=food"></a>.
 
 - News: One paper (Ouroboros) accepted by EMNLP 2024 main.
 
