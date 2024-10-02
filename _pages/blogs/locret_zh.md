@@ -1,5 +1,5 @@
 ---
-permalink: /blogs/_locret_zh
+permalink: /blogs_locret_zh
 title: ""
 layout: default
 ---
