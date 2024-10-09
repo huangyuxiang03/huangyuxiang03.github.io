@@ -203,13 +203,13 @@ Locret 的得分高于 LoCoCo，且组合算法优于单独的算法。这表明
 
 ## 引用
 
-请引用我们的ArXiV[论文](TODO).
+请引用我们的ArXiV[论文](https://arxiv.org/abs/2410.01805).
 
 ```
 @article{huang2024locret,
   title={Locret: Accelerating Long-Context LLM Inference with Retaining Heads},
   author={Yuxiang Huang, Binhang Yuan, Xu Han, Chaojun Xiao, Zhiyuan Liu},
-  journal={arXiv preprint arXiv:TODO},
+  journal={arXiv preprint arXiv:2410.01805},
   year={2024}
 }
 ```

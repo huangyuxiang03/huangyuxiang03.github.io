@@ -207,14 +207,14 @@ LocretはLoCoCoよりも高いスコアを達成し、組み合わせたアル�
 
 ## 引用
 
-私たちのArXiV [論文](TODO)を参照してください。
+私たちのArXiV [論文](https://arxiv.org/abs/2410.01805)を参照してください。
 
 
 ```
 @article{huang2024locret,
   title={Locret: Accelerating Long-Context LLM Inference with Retaining Heads},
   author={Yuxiang Huang, Binhang Yuan, Xu Han, Chaojun Xiao, Zhiyuan Liu},
-  journal={arXiv preprint arXiv:TODO},
+  journal={arXiv preprint arXiv:2410.01805},
   year={2024}
 }
 ```

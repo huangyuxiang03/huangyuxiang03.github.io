@@ -222,13 +222,13 @@ We gratefully acknowledge the following individuals for their contributions. Wit
 
 ## Citation
 
-Please refer to our ArXiV [paper](TODO).
+Please refer to our ArXiV [paper](https://arxiv.org/abs/2410.01805).
 
 ```
 @article{huang2024locret,
   title={Locret: Accelerating Long-Context LLM Inference with Retaining Heads},
   author={Yuxiang Huang, Binhang Yuan, Xu Han, Chaojun Xiao, Zhiyuan Liu},
-  journal={arXiv preprint arXiv:TODO},
+  journal={arXiv preprint arXiv:2410.01805},
   year={2024}
 }
 ```

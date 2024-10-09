@@ -206,14 +206,14 @@ Locret는 LoCoCo보다 더 높은 점수를 달성했으며, 결합된 알고리
 
 ## 인용
 
-우리의 ArXiV [논문](TODO)을 참조하십시오.
+우리의 ArXiV [논문](https://arxiv.org/abs/2410.01805)을 참조하십시오.
 
 
 ```
 @article{huang2024locret,
   title={Locret: Accelerating Long-Context LLM Inference with Retaining Heads},
   author={Yuxiang Huang, Binhang Yuan, Xu Han, Chaojun Xiao, Zhiyuan Liu},
-  journal={arXiv preprint arXiv:TODO},
+  journal={arXiv preprint arXiv:2410.01805},
   year={2024}
 }
 ```
