@@ -41,7 +41,7 @@ Here is a non-academical book list from a Chinese reader who is doing research o
 
 - Three Body [In Chinese] by Liu Cixin \| 三体 刘慈欣著
 
-    Very famous. Everyone knows this in China. It has won the Hugo Award for best Novel in 2015 and recommended by Barack Obama. There is no need to write too much recommendation here, just go for it!
+    Very famous. Everyone knows this in China. It has won the Hugo Award for best Novel in 2015. It is recommended by Barack Obama. There is no need to write too much recommendation here, just go for it!
 
 - Steves Jobs [Translated to Chinese] by Walter Isaacson \| 史蒂夫·乔布斯传 沃尔特·艾萨克森著
 
