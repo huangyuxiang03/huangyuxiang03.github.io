@@ -5,6 +5,9 @@ main:
 
   - title: "Blogs"
     url: "/blogs"
+  
+  - title: "Book List"
+    url: "/book_list"
 
   # - title: "News"
   #   url: "/#-news"
