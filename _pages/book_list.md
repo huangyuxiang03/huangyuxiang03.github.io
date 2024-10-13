@@ -12,7 +12,7 @@ Here is a non-academical book list from a Chinese reader who is doing research o
 
 - Anything written by Han Kang, havn't decided yet.
 
-- Horizons: A Global History of Science [In Chinese] By James Poskett | 地平线：现代科学的全球起源 詹姆斯·波斯基特著
+- Horizons: A Global History of Science [In Chinese] By James Poskett \| 地平线：现代科学的全球起源 詹姆斯·波斯基特著
 
 ## 2024
 
