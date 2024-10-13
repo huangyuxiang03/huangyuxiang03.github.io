@@ -22,7 +22,7 @@ I am a 4th year undergraduate student of Dept. of Computer Science and Technolog
 
 - News: One paper (Ouroboros) accepted by EMNLP 2024 main.
 
-- News: One paper (CA-LoRA) accepted by COLM. See you in Philadelphia in October!
+- News: One paper (CA-LoRA) accepted by COLM. The first COLM was super great!
 
 <!-- - News: Recently I have been working on efficient decoding algorithms. We have released  "Ouroboros", a new Speculative Decoding algorithm with Large Model Enhanced Drafting. Please refer to [Paper](https://arxiv.org/pdf/2402.13720.pdf) and [Code](https://github.com/thunlp/Ouroboros). It achieves speedups of up to $1.9\times$ and $2.8\times$ compared to lookahead decoding and speculative decoding, without any training. -->
 
