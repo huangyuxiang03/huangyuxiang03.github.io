@@ -6,7 +6,7 @@ layout: default
 
 # Yuxiang Huang's Book List
 
-Here is a non-academical book list from a Chinese reader who is doing research on Large Language Models. His book interests are World History and Culture, the Development of Science and Technologies, Chinese society and history, etc. Contributions to this book list are welcomed, by simply sending a email to Yuxiang Huang.
+Here is a non-academical book list from a Chinese reader who is doing research on Large Language Models. His book interests are World History and Culture, the Development of Science and Technologies, Chinese society and history, etc. Contributions to this book list are welcomed, by simply sending a email to Yuxiang Huang. Note: Name of Chinese authors go by [Last name] [Given name], as what people commonly do when it comes to literature and politics.
 
 ## Future Plans
 
