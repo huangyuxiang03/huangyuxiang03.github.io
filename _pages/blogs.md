@@ -14,6 +14,8 @@ layout: default
 
 # Non-Academic Stuff
 
+## [2024/10] [COLM 2024: The First COLM Meets my First Academic Conference](blogs/colm2024.md)
+
 ## [2024/10] [A Guidebook of Exchange Studies for DST@THU Students (In Chinese) | 贵系交换指南 | Unfinished](TODO)
 
 ## [2024/04] [Acceleration of LLM's Generation (In Chinese) | 大模型推理加速](https://mp.weixin.qq.com/s/_dQT3ZdAG5boXs7uxPBsAg)
