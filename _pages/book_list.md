@@ -14,11 +14,23 @@ Here is a non-academical book list from a Chinese reader who is doing research o
 
     Any recommendations? 
 
-- Horizons: A Global History of Science [Translated to Chinese] by James Poskett \| 地平线：现代科学的全球起源 詹姆斯·波斯基特著
+- Horizons: A Global History of Science [English] by James Poskett \| 地平线：现代科学的全球起源 詹姆斯·波斯基特著
 
-    Reading. TBD.
+    This is a facinating book and I've decided to read its English original version.
+
+- Civilization and Disease [Translated to Chinese] by Henry Ernest Sigerist \| 疾病与人类文明 亨利.欧内斯特.西格里斯特 
+
+    Reading TBD. Could anyone explain to me why the price of the **official** Chinese translated version is only 1/10 of the original English version? I would like to read the English version (because this book was used as lecture notes by the author at Universities), but they are toooooo expensive. 
 
 ## 2024
+
+- Horizons: A Global History of Science [Translated to Chinese] by James Poskett \| 地平线：现代科学的全球起源 詹姆斯·波斯基特著
+
+    The best book I've read on the history of science. The book uses abundant examples and historical incidents to convey one central idea: the development of science goes far beyond the "Euro-centric" view of history. For various reasons, Europe is often regarded as the center of scientific history, with the belief that scientific progress was exclusive to Europe. However, the author effectively demonstrates that this is not true. The development of science and technology occurred simultaneously in other regions, from Africa to Asia and the Americas. Moreover, science is never just about science; it is always interconnected with other aspects of international society, such as religion, war, politics, and ethnic self-esteem.
+
+    It is fascinating to learn that Einstein traveled to China, formed close friendships with Japanese scientists, was involved in India's independence movement, and inspired many Israeli Jewish scientists. Top scientists have been engaged with various parts of the world throughout their lives. The book made me realize that, while we acknowledge that world history is intertwined and interconnected, we often overlook this point in the context of the history of technology. The author’s perspective helps explain why researchers today frequently complain about being distracted from their scientific work—this is not a new issue. Throughout history, scientists have always been interrupted! Good scientists have also been effective managers, influencers, and politicians, a phenomenon that dates back as far as human history itself.
+
+    I would recommend this book to anyone considering a career in science or technology, as it offers insights on how to be a successful scientist through international collaboration, what individuals can achieve within the larger historical context, and why scientists are often pulled away by other matters.
 
 - How Language Began [Translated to Chinese] by Daniel L. Everett \| 语言的诞生 丹尼尔·L.埃弗里特著
 
