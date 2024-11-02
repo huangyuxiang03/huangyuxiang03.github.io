@@ -18,7 +18,7 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in [THUNLP](https://nlp.csai.tsinghua.edu.cn/) with [Weilin Zhao](https://achazwl.github.io/) (PhD. Student), [Xu Han](https://thucsthanxu13.github.io/) (Assist. Researcher) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Professor). I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. 
+I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA. I am also an incomming Ph.D Student of Prof. Zhiyuan Liu @THUNLP starting from 2025 Fall. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in [THUNLP](https://nlp.csai.tsinghua.edu.cn/) with [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate), [Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Prof.). I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. 
 
 - News: One paper (Ouroboros) accepted by EMNLP 2024 main.
 
@@ -63,11 +63,11 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 
 # Service and Voluntary Work
 
-- Reviewer: ACL ARR 2023 December Cycle
+- Reviewer: ICLR 2025, ACL ARR 2023 December Cycle.
 
 - Maintainer: [Ouroboros](https://github.com/thunlp/Ouroboros) github repository
 
-- Maintainer: [MiniCPM](https://github.com/OpenBMB/MiniCPM) github repository
+<!-- - Maintainer: [MiniCPM](https://github.com/OpenBMB/MiniCPM) github repository -->
 
 - *2022 autumn - 2023 spring*: Supporting education for Qinghai University, involved in *The foundation of Programming (higher level)* teaching. Lecture 1: [Search](https://cloud.tsinghua.edu.cn/f/a32ef2f86127456abb43/?dl=1) (In Chinese). Lecture 2: [Graphs and Trees](https://cloud.tsinghua.edu.cn/f/a8a5b591cb6649a78936/?dl=1) (In Chinese).
 
