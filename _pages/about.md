@@ -32,7 +32,7 @@ I am a 4th year undergraduate student of Dept. of Computer Science and Technolog
 
 **Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission to ICLR 2025).
 
-Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://arxiv.org/pdf/2402.13720.pdf) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2024 main).
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://aclanthology.org/2024.emnlp-main.742.pdf) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2024 main).
 
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., Li, K., Chen, C., Yang, T., & Sun, M. (2024). [CA-LoRA: Adapting Existing LoRA for Compressed LLMs to
 Enable Efficient Multi-Tasking on Personal Devices.](https://openreview.net/pdf?id=kpf7UbnSAm) Conference on Language Modeling (**COLM** 2024).
