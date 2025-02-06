@@ -54,6 +54,7 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 - *2021.10-2022.07*, SRT (Student Research Training): Worked at School of Software, topiced *compression algorithms in big data database*, advised by Prof. Shaoxu Song.
 
 # Honors and Awards
+- Academic Excellence Award of Dept. of CST, 2023.09-2024.07
 - Academic Excellence in Research Award of Dept. of CST, 2022.09-2023.07
 - Comprehensive Scholarship (Scholarship from Prof. Zesheng Tang) of Dept. of CST, 2021.09-2022.07 
 - The third prize, the 40th Tsinghua Challenge Cup
