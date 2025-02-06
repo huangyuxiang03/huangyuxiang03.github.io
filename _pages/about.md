@@ -19,7 +19,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 <!-- I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA.  -->
-I am an incoming Ph.D Student of Prof. [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) @TsinghuaNLP(https://nlp.csai.tsinghua.edu.cn/) starting from 2025 Fall. My research interests lie in efficient AI and machine learning systems, especially in LLM inference systems. My recent target is to develop efficient long-context processing algorithms and system frameworks and enhance LLM inference speed. In the future, I'd say that long-CoT inference acceleration would be something interesting. I believe in the idea that test-time scaling is a way to AGI, and I, and my labmates are working hard towards it.
+I am an incoming Ph.D Student (starting from 2025 Fall) of Prof. [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) @[TsinghuaNLP](https://nlp.csai.tsinghua.edu.cn/), Tsinghua University, Beijing, P.R. China. My research interests lie in efficient AI and machine learning systems, especially in LLM inference systems. My recent target is to develop efficient long-context processing algorithms and system frameworks and enhance LLM inference speed. In the future, I'd say that long-CoT inference acceleration would be something interesting. I believe in the idea that test-time scaling is a way to AGI, and I, and my labmates are working hard towards it.
 I'm currently working in TsinghuaNLP as a final-year undergraduate student, and I work closely with [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate), [Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Prof.). I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. 
 
 
@@ -73,6 +73,12 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 <!-- - Maintainer: [MiniCPM](https://github.com/OpenBMB/MiniCPM) github repository -->
 
 - *2022 autumn - 2023 spring*: Supporting education for Qinghai University, involved in *The foundation of Programming (higher level)* teaching. Lecture 1: [Search](https://cloud.tsinghua.edu.cn/f/a32ef2f86127456abb43/?dl=1) (In Chinese). Lecture 2: [Graphs and Trees](https://cloud.tsinghua.edu.cn/f/a8a5b591cb6649a78936/?dl=1) (In Chinese).
+
+# Collaborators
+
+I work closely with the MLSys guys ([Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.), [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate) and Ao Sun (M.Sc. Student)) in my lab, TsinghuaNLP Lab. If you want to work with me as a collaborator, please feel free to reach out. I'm also welcoming to all kinds of discussion, e.g. MLSys, AI, academic choice, daily life, etc. Here, I'd like to list the people I have collaborated with.
+
+- Mingye Li @Central South Univ. (2024.Summer - Now)
 
 # More
 
