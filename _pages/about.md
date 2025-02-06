@@ -58,6 +58,7 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 - Academic Excellence in Research Award of Dept. of CST, 2022.09-2023.07
 - Comprehensive Scholarship (Scholarship from Prof. Zesheng Tang) of Dept. of CST, 2021.09-2022.07 
 - The third prize, the 40th Tsinghua Challenge Cup
+- High School Graduation with Honor, Beijing No.9 Middle School, 2021.07
 
 # Educations
 - *2021.09-now*, Tsinghua University, Beijing, China. Undergraduate Student.
