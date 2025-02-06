@@ -18,7 +18,10 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA. I am also an incomming Ph.D Student of Prof. Zhiyuan Liu @THUNLP starting from 2025 Fall. My research interests lie in efficient AI and machine learning systems. I'm recently working on efficient large language models and parameter efficient tuning. I am interested in inference speed enhancement and model compression methods. Currently working in [THUNLP](https://nlp.csai.tsinghua.edu.cn/) with [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate), [Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Prof.). I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. 
+<!-- I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA.  -->
+I am an incoming Ph.D Student of Prof. [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) @TsinghuaNLP(https://nlp.csai.tsinghua.edu.cn/) starting from 2025 Fall. My research interests lie in efficient AI and machine learning systems, especially in LLM inference systems. My recent target is to develop efficient long-context processing algorithms and system frameworks and enhance LLM inference speed. In the future, I'd say that long-CoT inference acceleration would be something interesting. I believe in the idea that test-time scaling is a way to AGI, and I, and my labmates are working hard towards it.
+I'm currently working in TsinghuaNLP as a final-year undergraduate student, and I work closely with [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate), [Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.) and [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) (Assoc. Prof.). I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. 
+
 
 - News: One paper (Ouroboros) accepted by EMNLP 2024 main.
 
@@ -30,7 +33,7 @@ I am a 4th year undergraduate student of Dept. of Computer Science and Technolog
 
 # Publications and Preprints 
 
-**Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission to ICLR 2025).
+**Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission to ICML 2025).
 
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://aclanthology.org/2024.emnlp-main.742.pdf) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2024 main).
 
