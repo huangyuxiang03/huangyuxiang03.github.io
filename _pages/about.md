@@ -34,7 +34,7 @@ I'm currently working in TsinghuaNLP as a final-year undergraduate student, and 
 
 # Publications and Preprints 
 
-**Huang, Y.$^*$**, Li, M.$^*$, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.]() arXiv preprint arXiv:2502.xxxxx (In submission to ACL 2025).
+**Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.]() arXiv preprint arXiv:2502.xxxxx (In submission to ACL 2025).
 
 **Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission to ICML 2025).
 
