@@ -22,6 +22,7 @@ redirect_from:
 I am an incoming Ph.D Student (starting from 2025 Fall) of Prof. [Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) @[TsinghuaNLP](https://nlp.csai.tsinghua.edu.cn/), Tsinghua University, Beijing, P.R. China. My research interests lie in efficient AI and machine learning systems, especially in LLM inference systems. My recent target is to develop efficient long-context processing algorithms and system frameworks and to enhance LLM inference speed. In the future, I'd say that long-CoT inference acceleration would be something interesting. I believe in the idea that test-time scaling is a way to AGI, and I, with my labmates, are working hard towards it.
 I'm currently working in TsinghuaNLP as a final-year undergraduate student, and I have published papers in COLM and EMNLP, with a citation of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>. 
 
+- News: We are releasing our new long-context inference acceleration method APB. 10x speedup without any performance degradation!
 
 - News: One paper (Ouroboros) accepted by EMNLP 2024 main.
 
@@ -33,9 +34,11 @@ I'm currently working in TsinghuaNLP as a final-year undergraduate student, and 
 
 # Publications and Preprints 
 
+**Huang, Y.$^*$**, Li, M.$^*$, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.]() arXiv preprint arXiv:2502.xxxxx (In submission to ACL 2025).
+
 **Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission to ICML 2025).
 
-Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xiao, C., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://aclanthology.org/2024.emnlp-main.742.pdf) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2024 main).
+Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Xu, W., Xiao, C., Zhang, X., Fang, Y., Zhang, K., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://aclanthology.org/2024.emnlp-main.742.pdf) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2024 main).
 
 Zhao, W.$^*$, **Huang, Y.$^*$**, Han, X., Liu, Z., Zhang, Z., Li, K., Chen, C., Yang, T., & Sun, M. (2024). [CA-LoRA: Adapting Existing LoRA for Compressed LLMs to
 Enable Efficient Multi-Tasking on Personal Devices.](https://openreview.net/pdf?id=kpf7UbnSAm) Conference on Language Modeling (**COLM** 2024).
