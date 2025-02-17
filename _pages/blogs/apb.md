@@ -11,7 +11,7 @@ layout: default
 
 <div id="mem_task" style="text-align: center;">
   <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/apb/acc-speed.png" alt="desc" style="width: 100%;">
-  <figcaption>Figure 1: Speed and performance tradeoff of Locret.</figcaption>
+  <figcaption>Figure 1: Speed and performance tradeoff of APB.</figcaption>
 </div>
 
 ---
