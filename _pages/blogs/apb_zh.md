@@ -10,7 +10,7 @@ layout: default
 **简要总结:** 我们介绍了 **APB**，一个整合了稀疏注意力机制的序列并行推理框架。APB能够在无性能损失的前提下达到10x的长文本推理加速比。
 
 <div id="mem_task" style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/apb/acc-speed.png" alt="desc" style="width: 100%;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/apb/acc-speed.png" alt="desc" style="width: 90%;">
   <figcaption>Figure 1: APB的速度与性能</figcaption>
 </div>
 
