@@ -91,13 +91,13 @@ APB相较于所有基线算法实现了更快、性能更好的推理。APB能�
 
 ---
 ## 引用
-请引用我们的ArXiV[论文](https://arxiv.org/abs/2502.xxxxx)。
+请引用我们的ArXiV[论文](https://arxiv.org/abs/2502.12085)。
 
 ```
 @article{huang2025apb,
   title={APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs},
   author={Yuxiang Huang, Mingye Li, Xu Han, Chaojun Xiao, Weilin Zhao, Sun Ao, Hao Zhou, Jie Zhou, Zhiyuan Liu, Maosong Sun},
-  journal={arXiv preprint arXiv:xxxx},
+  journal={arXiv preprint arXiv:2502.12085},
   year={2025}
 }
 ```
