@@ -10,8 +10,8 @@ layout: default
 **TL;DR:** We introduce **APB**, a sequence parallelism framework integrated with approximate attention mechanism, that is able to achieve 10x lossless speedup for long-context inference, without any performance degredation.
 
 <div id="mem_task" style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/apb/acc-speed.png" alt="desc" style="width: 90%;">
-  <figcaption>Figure 1: Speed and performance tradeoff of APB.</figcaption>
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/apb/acc-speed.png" alt="desc" style="width: 100%;">
+  <figcaption>Figure 1: Speed and performance tradeoff of Locret.</figcaption>
 </div>
 
 ---
@@ -20,7 +20,7 @@ layout: default
 
 The speed of long-context prefill of Transformer-based LLMs is bounded by the quadratic compute introduced by the attention mechanism. There are two major ways to enhance the efficiency of long-context prefill: **Enhancing Parallelism** and **Reducing Compute**.
 
-- **Enhancing Parallelism**: One natural way to deal with compute-bound process is to spread the compute to multiple devices and enhance the parallelism. As one GPU's compute power is fully utilized, we can always increase the number of GPUs for more compute power. From this perspective, the key point to optimize long-context inference is to enhance parallelism and distribute the quadratic compute to multiple GPUs. Fortunately, parallelism is a well-studied topic in LLM training. Methods such as tensor parallelism, model parallelism, and sequence parallelism can all distribute the compute burden. For long-context optimization, the best choice would be sequence parallelism, as spliting the compute from a sequence level maintains its scalability towards extremely long inputs.
+- **Enhancing Parallelism**: One natural way to deal with compute-bound processes is to spread the compute to multiple devices and to enhance parallelism. As one GPU's compute power is fully utilized, we can always increase the number of GPUs for more compute power. From this perspective, the key point to optimize long-context inference is to enhance parallelism and distribute the quadratic compute to multiple GPUs. Fortunately, parallelism is a well-studied topic in LLM training. Methods such as tensor parallelism, model parallelism, and sequence parallelism can all distribute the compute burden. For long-context optimization, the best choice would be sequence parallelism, as spliting the compute from sequence level maintains its scalability towards extremely long inputs.
 
 - **Reducing Compute**: Another way of accelerating long-context prefill is to apply sparsity, i.e. reducing compute. We can simple make a choice on where to compute in the attention score. There are tons of related works of reducing the attention compute, e.g. MInference, SnapKV, Locret, etc. Unlike enhancing parallelism, this type of methods normally introduces certain level of performance degradation. Overlooking the unimportant part in the sequence would result in failure in some tasks. However, it is still a very promising type of approaches to enhance efficiency.
 
