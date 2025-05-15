@@ -23,11 +23,13 @@ I am an incoming Ph.D. student (starting Fall 2025) in the [TsinghuaNLP Group](h
 
 I am a strong advocate of the idea that the scaling law, especially test-time scaling is a pathway to AGI. I believe efficiency is the key to scaling. I have published papers at COLM and EMNLP, with a citation count of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
+- News: Two paper (APB, FR-Spec) accepted by ACL 2025 main.
+
 - News: We are releasing our new long-context inference acceleration method APB. 10x speedup without any performance degradation!
 
 - News: One paper (Ouroboros) accepted by EMNLP 2024 main.
 
-- News: One paper (CA-LoRA) accepted by COLM. The first COLM was super great!
+<!-- - News: One paper (CA-LoRA) accepted by COLM. The first COLM was super great! -->
 
 <!-- - News: Recently I have been working on efficient decoding algorithms. We have released  "Ouroboros", a new Speculative Decoding algorithm with Large Model Enhanced Drafting. Please refer to [Paper](https://arxiv.org/pdf/2402.13720.pdf) and [Code](https://github.com/thunlp/Ouroboros). It achieves speedups of up to $1.9\times$ and $2.8\times$ compared to lookahead decoding and speculative decoding, without any training. -->
 
