@@ -6,6 +6,8 @@ layout: default
 
 # Blogs
 
+## [2025/06] [It's Time to Support Sparse Attention in Inference Engines (In Chinese) | 是时候在推理引擎中支持稀疏注意力了（中文）](blogs/minicpm4.md)
+
 ## [2025/02] [APB: 10x Lossless Speedup for Long-Context Inference](blogs/apb.md)
 
 ## [2024/09] [Locret: Enabling Long-Context Inference on Personal Devices](blogs/locret.md)
