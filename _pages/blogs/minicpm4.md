@@ -1,4 +1,5 @@
-permalink: /blogs_apb_zh
+---
+permalink: /blogs_minicpm4
 title: ""
 layout: default
 ---
