@@ -19,7 +19,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 <!-- I am a 4th year undergraduate student of Dept. of Computer Science and Technology of Tsinghua University, Beijing, PRC, with a 3.92/4.00 overall GPA.  -->
-I am an incoming Ph.D. student (starting Fall 2025) in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing, under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/). My research focuses on efficient AI and machine learning systems, particularly in the area of LLM inference systems. Currently, I am working on developing efficient algorithms and system frameworks for long-context processing to enhance LLM inference speed. My research spans model compression, speculative decoding, and long-context inference acceleration, which I believe are critical to improving the efficiency of LLM systems. In the future, I aim to explore long-CoT inference acceleration as a promising direction.
+I am an incoming Ph.D. student (starting Fall 2025) in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing, under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/). Prior to this, I obtained a B.Eng. degree from the Department of Computer Science and Technology at Tsinghua University. My research focuses on efficient AI and machine learning systems, particularly in the area of LLM inference systems. Currently, I am working on developing efficient algorithms and system frameworks for long-context processing to enhance LLM inference speed. My research spans model compression, speculative decoding, and long-context inference acceleration, which I believe are critical to improving the efficiency of LLM systems. In the future, I aim to explore long-CoT inference acceleration as a promising direction.
 
 I am a strong advocate of the idea that the scaling law, especially test-time scaling is a pathway to AGI. I believe efficiency is the key to scaling. I have published papers at COLM and EMNLP, with a citation count of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
@@ -36,6 +36,8 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 <!-- - News: I am involved in the [MiniCPM](https://github.com/OpenBMB/MiniCPM) project of ModelBest Inc., OpenBMB and THUNLP. It is an end-side LLM outperforms Llama2-13B. I am responsible to model inference.  -->
 
 # Publications and Preprints 
+
+**Huang, Y.** (2025). On Accelerating Long-Context Inference via Sparse Self-Attention. B.Eng dissertation, Tsinghua University.
 
 MiniCPM Team. (2025). [MiniCPM4: Ultra-Efficient LLMs on End Devices](https://arxiv.org/pdf/2506.07900) arXiv preprint arXiv:2506:07900.
 
@@ -64,6 +66,8 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 - *2021.10-2022.07*, SRT (Student Research Training): Worked at School of Software, topiced *compression algorithms in big data database*, advised by Prof. Shaoxu Song.
 
 # Honors and Awards
+- Outstanding Bachlor Thesis of Tsinghua University, 2025.06.
+- Outstanding Graduate of Dept. of CST, Tsinghua University, 2025.06.
 - Academic Excellence Award of Dept. of CST, 2023.09-2024.07
 - Academic Excellence in Research Award of Dept. of CST, 2022.09-2023.07
 - Comprehensive Scholarship (Scholarship from Prof. Zesheng Tang) of Dept. of CST, 2021.09-2022.07 
@@ -71,18 +75,19 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 - High School Graduation with Honor, Beijing No.9 Middle School, 2021.07
 
 # Educations
-- *2021.09-now*, Tsinghua University, Beijing, China. Undergraduate Student.
+- *2025.09-now*, Tsinghua University, Beijing, China. Ph.D. Student.
+- *2021.09-2025.07*, Tsinghua University, Beijing, China. B.Eng.
 - *2024.07-2024.09*, The Hong Kong University of Science and Technology, Sai Kung, Hong Kong S.A.R., China. Research Internship.
 - *2023.09-2023.12*, University of Washington, Seattle, U.S.A. Exchange Student at School of Arts and Sciences.
 - *2018.09-2021.07*, Beijing No.9 Middle School, Beijing, China. High school Student.
 
 # Service and Voluntary Work
 
-- Reviewer: ICLR 2025, ACL ARR 2023 December Cycle.
+- Reviewer: COLM 2025, ICLR 2025, ACL ARR 2023 December Cycle.
+
+- Maintainer: [MiniCPM](https://github.com/OpenBMB/MiniCPM) github repository
 
 - Maintainer: [Ouroboros](https://github.com/thunlp/Ouroboros) github repository
-
-<!-- - Maintainer: [MiniCPM](https://github.com/OpenBMB/MiniCPM) github repository -->
 
 - *2022 autumn - 2023 spring*: Supporting education for Qinghai University, involved in *The foundation of Programming (higher level)* teaching. Lecture 1: [Search](https://cloud.tsinghua.edu.cn/f/a32ef2f86127456abb43/?dl=1) (In Chinese). Lecture 2: [Graphs and Trees](https://cloud.tsinghua.edu.cn/f/a8a5b591cb6649a78936/?dl=1) (In Chinese).
 
