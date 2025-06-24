@@ -23,11 +23,17 @@ I am an incoming Ph.D. student (starting Fall 2025) in the [TsinghuaNLP Group](h
 
 I am a strong advocate of the idea that the scaling law, especially test-time scaling is a pathway to AGI. I believe efficiency is the key to scaling. I have published papers at ACL, EMNLP and COLM, with a citation count of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
+- News: APB has been selected as **ACL Oral Paper**.
+
+- News: My bachelor thesis has been selected as **outstanding bachelor thesis** of Tsinghua University. 
+
+- News: Graduate with honor (outstanding graduate of Dept. of CST, Tsinghua University).
+
 - News: Two papers (APB, FR-Spec) accepted by ACL 2025 main.
 
 - News: We are releasing our new long-context inference acceleration method APB. 10x speedup without any performance degradation!
 
-- News: One paper (Ouroboros) accepted by EMNLP 2024 main.
+<!-- - News: One paper (Ouroboros) accepted by EMNLP 2024 main. -->
 
 <!-- - News: One paper (CA-LoRA) accepted by COLM. The first COLM was super great! -->
 
@@ -43,7 +49,7 @@ MiniCPM Team. (2025). [MiniCPM4: Ultra-Efficient LLMs on End Devices](https://ar
 
 **Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) arXiv preprint arXiv:2502.12085 (**ACL** 2025 main).
 
-Zhao, W.<sup>*</sup>, Pan, T.<sup>*</sup>, Han, X., Zhang, Y., Sun, A., **Huang, Y.**, Zhang, K., Zhao, W., Li, Y., Wang, J. & Liu, Z. (2025). [FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling.](https://arxiv.org/pdf/2502.14856) arXiv preprint arXiv:2502.14856 (**ACL** 2025 main).
+Zhao, W.<sup>*</sup>, Pan, T.<sup>*</sup>, Han, X., Zhang, Y., Sun, A., **Huang, Y.**, Zhang, K., Zhao, W., Li, Y., Wang, J. & Liu, Z. (2025). [FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling.](https://arxiv.org/pdf/2502.14856) arXiv preprint arXiv:2502.14856 (**ACL** 2025 main <font color="red">**Oral**</font>).
 
 **Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission).
 
