@@ -49,7 +49,7 @@ MiniCPM Team. (2025). [MiniCPM4: Ultra-Efficient LLMs on End Devices](https://ar
 
 **Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) arXiv preprint arXiv:2502.12085 (**ACL** 2025 main).
 
-Zhao, W.<sup>*</sup>, Pan, T.<sup>*</sup>, Han, X., Zhang, Y., Sun, A., **Huang, Y.**, Zhang, K., Zhao, W., Li, Y., Wang, J. & Liu, Z. (2025). [FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling.](https://arxiv.org/pdf/2502.14856) arXiv preprint arXiv:2502.14856 (**ACL** 2025 main <font color="red">**Oral**</font>).
+Zhao, W.<sup>*</sup>, Pan, T.<sup>*</sup>, Han, X., Zhang, Y., Sun, A., **Huang, Y.**, Zhang, K., Zhao, W., Li, Y., Wang, J. & Liu, Z. (2025). [FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling.](https://arxiv.org/pdf/2502.14856) arXiv preprint arXiv:2502.14856 (**ACL** 2025 main <span style="color: red;"><strong>Oral</strong></span>).
 
 **Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission).
 
