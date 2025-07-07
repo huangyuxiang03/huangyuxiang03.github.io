@@ -51,6 +51,8 @@ MiniCPM Team. (2025). [MiniCPM4: Ultra-Efficient LLMs on End Devices](https://ar
 
 Zhao, W.<sup>*</sup>, Pan, T.<sup>*</sup>, Han, X., Zhang, Y., Sun, A., **Huang, Y.**, Zhang, K., Zhao, W., Li, Y., Wang, J. & Liu, Z. (2025). [FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling.](https://arxiv.org/pdf/2502.14856) arXiv preprint arXiv:2502.14856 (**ACL** 2025 main).
 
+Yuan, Z., Li, J., Li, Y., **Huang, Y.**, Chen, C., Wang, S., & Gou, Z. (2025). CITR: Efficient Long Video Understanding Needs Causal Importance. (**ACM MM**).
+
 **Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2024). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) arXiv preprint arXiv:2410.01805 (In submission).
 
 Zhao, W.<sup>*</sup>, **Huang, Y.<sup>*</sup>**, Han, X., Xu, W., Xiao, C., Zhang, X., Fang, Y., Zhang, K., Liu, Z., & Sun, M. (2024). [Ouroboros: Speculative Decoding with Large Model Enhanced Drafting.](https://aclanthology.org/2024.emnlp-main.742.pdf) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2024 main).
