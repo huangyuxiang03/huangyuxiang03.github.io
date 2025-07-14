@@ -104,6 +104,7 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 I work closely with the MLSys guys ([Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.), [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate) and [Ao Sun](https://maydomine.github.io) (M.Sc. Student)) in my lab, TsinghuaNLP Lab. If you want to work with me as a collaborator, please feel free to reach out. I'm also welcoming to all kinds of discussion, e.g. MLSys, AI, academic choice, daily life, etc. Here, I'd like to list the people I have collaborated with.
 
 - Mingye Li @Central South Univ. (2024.Summer - Now)
+- Jicheng Han @Tsinghua Univ. (2025.Summer - Now)
 
 # More
 
