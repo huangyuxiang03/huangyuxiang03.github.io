@@ -47,6 +47,8 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 
 MiniCPM Team. (2025). [MiniCPM4: Ultra-Efficient LLMs on End Devices](https://arxiv.org/pdf/2506.07900) arXiv preprint arXiv:2506:07900.
 
+Yu, T., Wang, Z., Wang, C., Huang, F., Ma, W., He, Z., ... & Sun, M. (2025). [MiniCPM-V 4.5: Cooking Efficient MLLMs via Architecture, Data, and Training Recipe.](https://arxiv.org/pdf/2509.18154) arXiv preprint arXiv:2509.18154.
+
 **Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) arXiv preprint arXiv:2502.12085 (**ACL** 2025 main <span style="color: red;"><strong>Oral</strong></span>).
 
 Zhao, W.<sup>*</sup>, Pan, T.<sup>*</sup>, Han, X., Zhang, Y., Sun, A., **Huang, Y.**, Zhang, K., Zhao, W., Li, Y., Wang, J. & Liu, Z. (2025). [FR-Spec: Accelerating Large-Vocabulary Language Models via Frequency-Ranked Speculative Sampling.](https://arxiv.org/pdf/2502.14856) arXiv preprint arXiv:2502.14856 (**ACL** 2025 main).
