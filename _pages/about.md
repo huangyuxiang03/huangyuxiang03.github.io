@@ -43,6 +43,8 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 
 # Publications and Preprints 
 
+**Huang, Y.**, Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
+
 **Huang, Y.** (2025). On Accelerating Long-Context Inference via Sparse Self-Attention. B.Eng dissertation, Tsinghua University.
 
 MiniCPM Team. (2025). [MiniCPM4: Ultra-Efficient LLMs on End Devices](https://arxiv.org/pdf/2506.07900) arXiv preprint arXiv:2506:07900.
@@ -93,7 +95,7 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 
 # Service and Voluntary Work
 
-- Reviewer: COLM 2025, ICLR 2025, ACL ARR 2023 December Cycle.
+- Reviewer: ICLR 2026, AAAI 2025, COLM 2025, ICLR 2025, ACL ARR Dec. 2023.
 
 - Maintainer: [MiniCPM](https://github.com/OpenBMB/MiniCPM) github repository
 
@@ -105,8 +107,9 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 
 I work closely with the MLSys guys ([Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.), [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate) and [Ao Sun](https://maydomine.github.io) (M.Sc. Student)) in my lab, TsinghuaNLP Lab. If you want to work with me as a collaborator, please feel free to reach out. I'm also welcoming to all kinds of discussion, e.g. MLSys, AI, academic choice, daily life, etc. Here, I'd like to list the people I have collaborated with.
 
-- Mingye Li @Central South Univ. (2024.Summer - Now)
+- Mingye Li @Central South Univ. (2024.Summer - 2025.Summer)
 - Jicheng Han @Tsinghua Univ. (2025.Summer - Now)
+- Pengjie Wang @Tsinghua Univ. (2025.Fall - Now)
 
 # More
 
