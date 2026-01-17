@@ -45,7 +45,7 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 
 **Huang, Y.**, Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
 
-**Huang, Y.** (2025). On Accelerating Long-Context Inference via Sparse Self-Attention. B.Eng dissertation, Tsinghua University.
+**Huang, Y.** (2025). [On Accelerating Long-Context Inference via Sparse Self-Attention.](https://newetds.lib.tsinghua.edu.cn/qh/paper/summary?dbCode=UNDERGRADUATE&sysId=3194) B.Eng dissertation, Tsinghua University.
 
 MiniCPM Team. (2025). [MiniCPM4: Ultra-Efficient LLMs on End Devices](https://arxiv.org/pdf/2506.07900) arXiv preprint arXiv:2506:07900.
 
