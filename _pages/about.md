@@ -81,8 +81,8 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 # Teaching and Service
 
 - Teaching assistant: 
-  - Towards Artifitial General Intelligence (00240401/00240411): 2025 Spring, 2026 Spring
-  - Towards Artifitial General Intelligence Practice (00240421): 2025 Fall, 2026 Spring
+  - Towards Artificial General Intelligence (00240401/00240411): 2025 Spring, 2026 Spring
+  - Towards Artificial General Intelligence Practice (00240421): 2025 Fall, 2026 Spring
 
 - Reviewer: 
   - ICLR: 2025, 2026
