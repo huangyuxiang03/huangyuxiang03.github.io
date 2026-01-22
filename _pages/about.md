@@ -35,6 +35,8 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 
 # Selected Publications
 
+Please refer to [Publications](https://huangyuxiang03.github.io/publications) or [Scholar](https://scholar.google.com/citations?user=nvCXW78AAAAJ&hl=en) for my complete publication list.
+
 **Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
 
 **Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention. (In Submission)
