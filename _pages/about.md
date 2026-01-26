@@ -41,7 +41,7 @@ Please refer to [Publications](https://huangyuxiang03.github.io/publications) or
 
 **Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention. (In Submission)
 
-**Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) arXiv preprint arXiv:2502.12085 (**ACL** 2025 main <span style="color: red;"><strong>Oral</strong></span>).
+**Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) Annual Meeting of the Association for Computational Linguistics (**ACL** 2025 main <span style="color: red;"><strong>Oral</strong></span>).
 
 **Huang, Y.**, Yuan, B., Han, X., Xiao, C., & Liu, Z. (2025). [Locret: Enhancing Eviction in Long-Context LLM Inference with Trained Retaining Heads.](https://arxiv.org/pdf/2410.01805) Transactions on Machine Learning Research (**TMLR** 2025).
 
@@ -50,7 +50,7 @@ Zhao, W.<sup>*</sup>, **Huang, Y.<sup>*</sup>**, Han, X., Xu, W., Xiao, C., Zhan
 Zhao, W.<sup>*</sup>, **Huang, Y.<sup>*</sup>**, Han, X., Liu, Z., Zhang, Z., Li, K., Chen, C., Yang, T., & Sun, M. (2024). [CA-LoRA: Adapting Existing LoRA for Compressed LLMs to
 Enable Efficient Multi-Tasking on Personal Devices.](https://openreview.net/pdf?id=kpf7UbnSAm) Conference on Language Modeling (**COLM** 2024).
 
-Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time series data encoding for efficient storage: a comparative analysis in Apache IoTDB.](https://www.vldb.org/pvldb/vol15/p2148-song.pdf) Proceedings of the **VLDB** Endowment, 15(10), 2148-2160 (**VLDB** 2023).
+Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time series data encoding for efficient storage: a comparative analysis in Apache IoTDB.](https://www.vldb.org/pvldb/vol15/p2148-song.pdf) Proceedings of the **VLDB** Endowment, 15(10), 2148-2160 (**VLDB** 2022).
 
 (Note: <sup>*</sup> indicates equal contribution.)
 
