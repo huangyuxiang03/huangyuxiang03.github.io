@@ -69,7 +69,9 @@ layout: default
 </div>
 
 
-既然可训稀疏注意力的局部性不够好，我们在设计可训稀疏注意力时主要优化这一方面。一种比较简单的方式是构造一个局部性下界，让所有token选择的局部性必然好于这个下界。设第$t$个token选择的所有位置为$\Gamma(t)$，那么Topk稀疏注意力一定有$|\Gamma(t)| = k$。我们将其分解为查询相关/无关的选择，也就是$\Gamma(t) = \Gamma_q(t) + \Gamma_e(t), k = k_q+k_e$，并且让$\Gamma_e(t)$的选择遵循一个KV cache丢弃模式，即这一部分的选择一定不会从CPU上捞回token，那我们就能保证局部性一定好于$k_q/k$。
+既然可训稀疏注意力的局部性不够好，我们在设计可训稀疏注意力时主要优化这一方面。一种比较简单的方式是构造一个局部性下界，让所有token选择的局部性必然好于这个下界。设第$t$个token选择的所有位置为$\Gamma(t)$，
+
+那么Topk稀疏注意力一定有$|\Gamma(t)| = k$。我们将其分解为查询相关/无关的选择，也就是$\Gamma(t) = \Gamma_q(t) + \Gamma_e(t), k = k_q+k_e$，并且让$\Gamma_e(t)$的选择遵循一个KV cache丢弃模式，即这一部分的选择一定不会从CPU上捞回token，那我们就能保证局部性一定好于$k_q/k$。
 
 对于$\Gamma_q(t)$，我们直接采用InfLLMv2的方法来选择上下文块。每个块求均值得到一个块表示，用每个token的$q_t$点乘这个表示，然后选择Top-$k_q$个块即可。
 
@@ -88,19 +90,19 @@ layout: default
 - 长文本输入：比传统的KV cache卸载方法效果更好。注：DMA的设计其实是eviction，所以不能做Recall。
 
 <div id="mem_task" style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/nosa/long_input.png" alt="desc" style="width: 100%;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/nosa/long_input.png" alt="desc" style="width: 80%;">
 </div>
 
 - 短文本/长输出：NOSA在短文本上不掉点，在长文本上远超其他传统的KV cache卸载方法。传统KV cache卸载方法因为训推不一致，decode过程会累积误差，导致最终的生成崩掉。详见论文中这一部分的分析。
 
 <div id="mem_task" style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/nosa/short_and_reasoning.png" alt="desc" style="width: 100%;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/nosa/short_and_reasoning.png" alt="desc" style="width: 80%;">
 </div>
 
 - 解码吞吐：在速度上超越其他baseline。在实现上，NOSI非常重要，因为HF太慢，不能体现NOSA的效果。可以看到，NOSA的局部性比InfLLMv2更好，所以解码吞吐也更高。
 
 <div id="mem_task" style="text-align: center;">
-  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/nosa/efficiency.png" alt="desc" style="width: 100%;">
+  <img src="https://raw.githubusercontent.com/huangyuxiang03/huangyuxiang03.github.io/refs/heads/main/_pages/blogs/assets/nosa/efficiency.png" alt="desc" style="width: 80%;">
 </div>
 
 ## 讨论
