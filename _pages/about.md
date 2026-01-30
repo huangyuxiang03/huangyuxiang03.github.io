@@ -40,7 +40,7 @@ Please refer to [Publications](https://huangyuxiang03.github.io/publications) or
 
 **Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
 
-**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention. (In Submission)
+**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (In Submission).
 
 **Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) Annual Meeting of the Association for Computational Linguistics (**ACL** 2025 main <span style="color: red;"><strong>Oral</strong></span>).
 
