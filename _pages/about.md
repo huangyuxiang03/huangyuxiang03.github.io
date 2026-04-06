@@ -19,20 +19,23 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 
-I am a 1st year Ph.D. Student in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing.<!-- under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/).  -->
-Prior to this, I obtained a B.Eng. degree from the Department of Computer Science and Technology at Tsinghua University. My research focuses on efficient AI and machine learning systems, particularly in the area of LLM inference systems. Currently, I am working on developing efficient algorithms and system frameworks for long-context processing to enhance LLM inference speed. My research spans model compression, speculative decoding, and long-context inference acceleration, which I believe are critical to improving the efficiency of LLM systems. In the future, I aim to explore long-CoT inference acceleration as a promising direction.
+I am a 1st year Ph.D. Student in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing, under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/). 
+Prior to this, I obtained a B.Eng. degree from the Department of Computer Science and Technology at Tsinghua University. My research focuses on efficient AI and machine learning systems, particularly in the area of LLM inference systems. Currently, I am working on developing efficient algorithms, especially sparse attentions, and system frameworks for long-context processing to enhance LLM inference speed. 
+My research spans model compression, speculative decoding, and long-context inference acceleration, which I believe are critical to improving the efficiency of LLM systems. 
 
-I am a strong advocate of the idea that the scaling law, especially test-time scaling is a pathway to AGI. I believe efficiency is the key to scaling. I have published papers at ACL, EMNLP and COLM, with a citation count of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+<!-- In the future, I aim to explore long-CoT inference acceleration as a promising direction. -->
 
-- News: APB has been selected as **ACL Oral Paper**.
+I am a strong advocate of the idea that the scaling law, especially test-time scaling is a pathway to AGI. I believe efficiency is the key to scaling, and we need algorithms with better theoretical guarantees. My publications mainly lie in ACL, EMNLP and COLM, with a citation count of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
-- News: My bachelor thesis has been selected as **outstanding bachelor thesis** of Tsinghua University. 
+- News: Spava has been accepted in **ACL 2026 main**!
+
+<!-- - News: My bachelor thesis has been selected as **outstanding bachelor thesis** of Tsinghua University. 
 
 - News: Graduate with honor (outstanding graduate of Dept. of CST, Tsinghua University).
 
 - News: Two papers (APB, FR-Spec) accepted by ACL 2025 main.
 
-- News: We are releasing our new long-context inference acceleration method APB. 10x speedup without any performance degradation!
+- News: We are releasing our new long-context inference acceleration method APB. 10x speedup without any performance degradation! -->
 
 # Selected Publications
 
@@ -40,7 +43,7 @@ Please refer to [Publications](https://huangyuxiang03.github.io/publications) or
 
 **Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
 
-**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (In Submission).
+**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (ACL 2026 main).
 
 **Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) Annual Meeting of the Association for Computational Linguistics (**ACL** 2025 main <span style="color: red;"><strong>Oral</strong></span>).
 

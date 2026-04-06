@@ -10,7 +10,7 @@ layout: default
 
 **Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
 
-**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (In Submission).
+**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (ACL 2026 main).
 
 Zhao, W., Zhou, Z., Su, Z., Xiao, C., Li, Y., Li, Y., ... & Liu, Z. (2025). [Infllm-v2: Dense-sparse switchable attention for seamless short-to-long adaptation.](https://arxiv.org/pdf/2509.24663) International Conference on Learning Representations (ICLR 2026).
 
