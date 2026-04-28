@@ -66,6 +66,10 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 # Talks
 
 - 2026.04.28, Guest Lecture at Tsinghua's Graduate NLP Course (80240763), [**Sparse Attention and KV Cache Optimizations**](./blogs/assets/talks/sparse_attentions_nlp_260428.pdf)
+- 2026.03.28, Talk at OpenBMB (In Chinese), [**Towards Next-Generation Sparse Attentions**](./blogs/assets/talks/sparse_attentions_openbmb_260328.pdf)
+- 2025.07.15, Oral Presentation at ACL, [**APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs**](./blogs/assets/talks/apb_25acl_oral.pdf)
+- 2025.06.08, B.Eng. Defense (In Chinese), [**On Accelerating Long-Context Inference via Sparse Self-Attention**](./blogs/assets/talks/bachlor_defense.pdf)
+
 
 
 # Research Experiences
