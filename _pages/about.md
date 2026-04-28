@@ -63,6 +63,11 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 **Huang, Y.** (2025). [On Accelerating Long-Context Inference via Sparse Self-Attention.](https://newetds.lib.tsinghua.edu.cn/qh/paper/summary?dbCode=UNDERGRADUATE&sysId=3194) B.Eng dissertation, Tsinghua University.
 
 
+# Talks
+
+- 2026.04.28, Guest Lecture at Tsinghua's Graduate NLP Course (80240763), [**Sparse Attention and KV Cache Optimizations**](./blogs/assets/talks/sparse_attentions_nlp_260428.pdf)
+
+
 # Research Experiences
 - *2022.07-now*: Working in THUNLP, dept. of CST. Topiced *efficient LLMs*.
 - *2024.07-2024.09*: Research Internship at HKUST, topiced *LLM long-context inference*, advised by Prof. [Binhang Yuan](https://binhangyuan.github.io/site/).
