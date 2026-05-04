@@ -19,7 +19,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 
-I am a 1st year Ph.D. Student in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing, under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/). 
+I am a 1st year Ph.D. Student in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing, under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) and work closely with [Prof. Xu Han](https://thucsthanxu13.github.io/). 
 Prior to this, I obtained a B.Eng. degree from the Department of Computer Science and Technology at Tsinghua University. My research focuses on efficient AI and machine learning systems, particularly in the area of LLM inference systems. Currently, I am working on developing efficient algorithms, especially sparse attentions, and system frameworks for long-context processing to enhance LLM inference speed. 
 My research spans model compression, speculative decoding, and long-context inference acceleration, which I believe are critical to improving the efficiency of LLM systems. 
 
@@ -43,7 +43,7 @@ Please refer to [Publications](https://huangyuxiang03.github.io/publications) or
 
 **Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
 
-**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (ACL 2026 main).
+**Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (**ACL** 2026 main).
 
 **Huang, Y.<sup>*</sup>**, Li, M.<sup>*</sup>, Han, X., Xiao, C., Zhao, W., Sun, A., Zhou, J., Zhou, H., Liu, Z., & Sun, M. (2025). [APB: Accelerating Distributed Long-Context Inference by Passing Compressed Context Blocks across GPUs.](https://arxiv.org/pdf/2502.12085) Annual Meeting of the Association for Computational Linguistics (**ACL** 2025 main <span style="color: red;"><strong>Oral</strong></span>).
 
@@ -101,16 +101,17 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 
 - Reviewer: 
   - ICLR: 2025, 2026
+  - ICML: 2026
   - COLM: 2025, 2026
   - AAAI: 2025
   - ACL ARR: Dec. 2023
 
 - Supporting education for Qinghai University (2022 autumn - 2023 spring), involved in *The foundation of Programming (higher level)* teaching. Lecture 1: [Search](https://cloud.tsinghua.edu.cn/f/a32ef2f86127456abb43/?dl=1) (In Chinese). Lecture 2: [Graphs and Trees](https://cloud.tsinghua.edu.cn/f/a8a5b591cb6649a78936/?dl=1) (In Chinese).
 
-# Collaborators
+<!-- # Collaborators
 
 I work closely with the MLSys guys ([Xu Han](https://thucsthanxu13.github.io/) (Research Assist. Prof.), [Weilin Zhao](https://achazwl.github.io/) (PhD. Candidate) and [Ao Sun](https://maydomine.github.io) (M.Sc. Student)) in my lab, TsinghuaNLP Lab. If you want to work with me as a collaborator, please feel free to reach out. I'm also welcoming to all kinds of discussion, e.g. MLSys, AI, academic choice, daily life, etc. Here, I'd like to list the people I have collaborated with.
 
 - Mingye Li @Central South Univ. (2024.Summer - 2025.Summer)
 - Jicheng Han @Tsinghua Univ. (2025.Summer - Now)
-- Pengjie Wang @Tsinghua Univ. (2025.Fall - Now)
+- Pengjie Wang @Tsinghua Univ. (2025.Fall - Now) -->
