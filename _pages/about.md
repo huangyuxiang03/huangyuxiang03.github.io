@@ -41,8 +41,7 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 
 Please refer to [Publications](https://huangyuxiang03.github.io/publications) or [Scholar](https://scholar.google.com/citations?user=nvCXW78AAAAJ&hl=en) for my complete publication list.
 
-**Huang, Y.<sup>*</sup>**, Gonçalves, N. M. T.<sup>*</sup>, Alvetreti, F., Li, L., Han, X., Ponti, E. M., Martins, A. F. T., & Treviso, M. V. (2026). DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention.
-
+**Huang, Y.<sup>*</sup>**, Gonçalves, N. M. T.<sup>*</sup>, Alvetreti, F., Li, L., Han, X., Ponti, E. M., Martins, A. F. T., & Treviso, M. V. (2026). [DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention.](https://arxiv.org/pdf/2605.18753) arXiv preprint arXiv:2605.18753.
 
 **Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) arXiv preprint arXiv:2510.13602.
 
