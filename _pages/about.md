@@ -27,6 +27,13 @@ My research spans model compression, speculative decoding, and long-context infe
 
 I am a strong advocate of the idea that the scaling law, especially test-time scaling is a pathway to AGI. I believe efficiency is the key to scaling, and we need algorithms with better theoretical guarantees. My publications mainly lie in ACL, EMNLP and COLM, with a citation count of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
+
+**Email Note**: To help filter AI-generated emails, please address me correctly when contacting me: use “黄宇翔” in Chinese emails, and “Yuxiang Huang” in emails written in other languages. Emails with an incorrect name may not receive a reply. Thank you for your understanding.
+
+**邮件说明**：为帮助过滤 AI 生成的邮件，若您通过邮件联系我，请在中文邮件中称呼我为“黄宇翔”，在其他语言邮件中称呼我为“Yuxiang Huang”。称呼不正确的邮件可能无法收到回复。感谢理解！
+
+
+
 - News: Spava has been accepted in **ACL 2026 main**!
 
 <!-- - News: My bachelor thesis has been selected as **outstanding bachelor thesis** of Tsinghua University. 
