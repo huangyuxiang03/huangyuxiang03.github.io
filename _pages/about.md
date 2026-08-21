@@ -36,7 +36,7 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 
 
 
-- News: Spava has been accepted in **ACL 2026 main**!
+- News: NOSA has been accepted in **EMNLP 2026 main**!
 
 <!-- - News: My bachelor thesis has been selected as **outstanding bachelor thesis** of Tsinghua University. 
 
@@ -52,7 +52,7 @@ Please refer to [Publications](https://huangyuxiang03.github.io/publications) or
 
 **Huang, Y.<sup>*</sup>**, Gonçalves, N. M. T.<sup>*</sup>, Alvetreti, F., Li, L., Han, X., Ponti, E. M., Martins, A. F. T., & Treviso, M. V. (2026). [DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention.](https://arxiv.org/pdf/2605.18753) arXiv preprint arXiv:2605.18753.
 
-**Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) (ICML 2026 AdaptFM Workshop).
+**Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2026 main).
 
 **Huang, Y.**, Li, M., Han, X., Xiao, C., Zhao, W., Sun, A., Yuan, Z., Zhou, H., Meng, F., Liu, Z. (2026). [Spava: Accelerating Long-Video Understanding via Sequence-Parallelism-aware Approximate Attention.](https://arxiv.org/pdf/2601.21444) arXiv preprint arXiv:2601.21444 (**ACL** 2026 main <span style="color: red;"><strong>Oral</strong></span>).
 
