@@ -19,7 +19,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 
-I am a 1st year Ph.D. Student in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing, under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) and work closely with [Prof. Xu Han](https://thucsthanxu13.github.io/). 
+I am a 2nd year Ph.D. Student in the [TsinghuaNLP Group](https://nlp.csai.tsinghua.edu.cn/) at Tsinghua University, Beijing, under the supervision of [Prof. Zhiyuan Liu](https://nlp.csai.tsinghua.edu.cn/~lzy/) and work closely with [Prof. Xu Han](https://thucsthanxu13.github.io/). 
 Prior to this, I obtained a B.Eng. degree from the Department of Computer Science and Technology at Tsinghua University. My research focuses on efficient AI and machine learning systems, particularly in the area of LLM inference systems. Currently, I am working on developing efficient algorithms, especially sparse attentions, and system frameworks for long-context processing to enhance LLM inference speed. 
 My research spans model compression, speculative decoding, and long-context inference acceleration, which I believe are critical to improving the efficiency of LLM systems. 
 
@@ -28,14 +28,15 @@ My research spans model compression, speculative decoding, and long-context infe
 I am a strong advocate of the idea that the scaling law, especially test-time scaling is a pathway to AGI. I believe efficiency is the key to scaling, and we need algorithms with better theoretical guarantees. My publications mainly lie in ACL, EMNLP and COLM, with a citation count of <a href='https://scholar.google.com/citations?user=nvCXW78AAAAJ'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
 
-
+<!-- 
 **Email Note**: To help me better identify AI-generated emails, I would appreciate it if you could address me as “黄宇翔” in Chinese emails and as “Yuxiang Huang” in emails written in other languages. This helps ensure that your message reaches me properly. Thank you for your understanding.
 
 **邮件说明**：为帮助我更好地识别 AI 生成的邮件，若您通过邮件联系我，烦请在中文邮件中称呼我为“黄宇翔”，在其他语言邮件中称呼我为“Yuxiang Huang”。这样可以帮助我更好地确认并处理您的邮件。感谢理解！
+ -->
 
 
 
-
+- News: DashAttention has been accepted in **NeurIPS 2026**!
 - News: NOSA has been accepted in **EMNLP 2026 main**!
 
 <!-- - News: My bachelor thesis has been selected as **outstanding bachelor thesis** of Tsinghua University. 
@@ -50,7 +51,7 @@ I am a strong advocate of the idea that the scaling law, especially test-time sc
 
 Please refer to [Publications](https://huangyuxiang03.github.io/publications) or [Scholar](https://scholar.google.com/citations?user=nvCXW78AAAAJ&hl=en) for my complete publication list.
 
-**Huang, Y.<sup>*</sup>**, Gonçalves, N. M. T.<sup>*</sup>, Alvetreti, F., Li, L., Han, X., Ponti, E. M., Martins, A. F. T., & Treviso, M. V. (2026). [DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention.](https://arxiv.org/pdf/2605.18753) arXiv preprint arXiv:2605.18753.
+**Huang, Y.<sup>*</sup>**, Gonçalves, N. M. T.<sup>*</sup>, Alvetreti, F., Li, L., Han, X., Ponti, E. M., Martins, A. F. T., & Treviso, M. V. (2026). [DashAttention: Differentiable and Adaptive Sparse Hierarchical Attention.](https://arxiv.org/pdf/2605.18753) (**NeurIPS** 2026).
 
 **Huang, Y.<sup>*</sup>**, Wang, P.<sup>*</sup>, Han, J., Zhao, W., Su, Z., Sun, A., Lyu, H., Zhao, H., Wang, Y., Xiao, C., Han, X., & Liu, Z. (2025). [NOSA: Native and Offloadable Sparse Attention.](https://arxiv.org/pdf/2510.13602) Main Conference of Empirical Methods in Natural Language Processing (**EMNLP** 2026 main).
 
@@ -107,17 +108,20 @@ Xiao, J., **Huang, Y.**, Hu, C., Song, S., Huang, X., & Wang, J. (2022). [Time s
 # Teaching and Service
 
 - Teaching assistant: 
-  - Towards Artificial General Intelligence (00240401/00240411): 2025 Spring, 2026 Spring
-  - Towards Artificial General Intelligence Practice (00240421): 2025 Fall, 2026 Spring
+  - Towards Artificial General Intelligence (00240401/00240411): 2025 Spring, 2026 Spring, 2026 Fall
+  - Towards Artificial General Intelligence Practice (00240421): 2025 Fall, 2026 Spring, 2026 Fall
+  - **We have more than 1600 students enrolled in the TAGI course 2026 Fall!**
 
 - Reviewer: 
   - ICLR: 2025, 2026
   - ICML: 2026
   - COLM: 2025, 2026
-  - AAAI: 2025
-  - ACL ARR: Dec. 2023
+  - AAAI: 2025, 2026
+  - ACL ARR: Dec. 2023, May. 2026
+  - TMLR: 2026-Now
+  - NLPCC: 2026
 
-- Supporting education for Qinghai University (2022 autumn - 2023 spring), involved in *The foundation of Programming (higher level)* teaching. Lecture 1: [Search](https://cloud.tsinghua.edu.cn/f/a32ef2f86127456abb43/?dl=1) (In Chinese). Lecture 2: [Graphs and Trees](https://cloud.tsinghua.edu.cn/f/a8a5b591cb6649a78936/?dl=1) (In Chinese).
+<!-- - Supporting education for Qinghai University (2022 autumn - 2023 spring), involved in *The foundation of Programming (higher level)* teaching. Lecture 1: [Search](https://cloud.tsinghua.edu.cn/f/a32ef2f86127456abb43/?dl=1) (In Chinese). Lecture 2: [Graphs and Trees](https://cloud.tsinghua.edu.cn/f/a8a5b591cb6649a78936/?dl=1) (In Chinese). -->
 
 <!-- # Collaborators
 
